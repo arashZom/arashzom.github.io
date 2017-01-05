@@ -1,0 +1,42 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: گيك مسلك
+nameOfWr: آرش اورنگ پور
+biourl: "/images/arashtext.jpg"
+email: arashzambie@yahoo.com
+description: > # this means to ignore newlines until "baseurl:"
+    فردي هستم دوست دار تجربه كاربري و علاقه مند به طراحي رابط كاربري
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://arashzom.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: ooarashoo
+github_username:  arashZom
+facebook_username: arash.orangpour
+linkedin_profile: arash-orangepoor-b8a41a5b
+linkedin_username: arash orangpour
+# Build settings
+# markdown: kramdown redcarpet
+markdown: kramdown
+highlighter: rouge
+pic: false
+imgUrl: ""
+img2: ""
+theme: minima
+gems:
+  - jekyll-feed
+  - jalalidate
+exclude:
+  - Gemfile
+  - Gemfile.lock

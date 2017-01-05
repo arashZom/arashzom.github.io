@@ -1,0 +1,29 @@
+---
+layout: default
+---
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+  </header>
+
+ <span>{{ content }}</span>
+
+  <article class="post-content">
+	  <div class="contactUs">
+		<form action="https://getsimpleform.com/messages?form_api_token=5815373aa6dbe509c4099c55d498fa53" name="contact" value="" method="post" dir="rtl">
+			 <label for="name">نام:</label>
+			 <input type="text" class="nameUser" name="name" placeholder="نام" /><br /><br />
+			 <label for="email">رايانامه:</label>
+			 <input type="email" class="emailUser" name="email" placeholder="email" /><br /><br />
+			 <label for="subject">موضوع:</label>
+			 <input type="text" name="subject" class="subject" /><br /><br />
+			 <span class="textAra">متن:</span>
+			 <textarea name="message" id="textAra" class="letter" cols="30" rows="5">	
+			 </textarea><br /><br /><br>
+			 <input type="submit" class="submitContact" name="contactS" value="ارسال" />
+		</form>
+	  </div>
+  </article>
+
+</div>
