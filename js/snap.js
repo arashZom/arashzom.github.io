@@ -363,6 +363,7 @@ if(matchMedia('only screen and (max-width: 480px)').matches){
 		$('#panel').children('.name').show();
 		$('#panel').children('.id').show();
 		$('#panel').children('.biography').show();
+		$('#panel').children('.share-buttons-bio').show();
 		$(".profile svg").hide('400', function() {
 				 $(".close").fadeIn();
 		});
@@ -405,7 +406,7 @@ $(".profile").click(function(event) {
 	event.preventDefault();
 	var box = $(this).children('div').first();
 	 scotchPanel.close();
-
+   $(".profile svg").hide();
 	// if(jPM.getMenu())
        // {
        	  // console.log(jPM.getMenu());
@@ -468,6 +469,14 @@ $(".profile").click(function(event) {
     // box1= $(this).children('div').first();
 	// if(box.attr("id")){
 		// box.removeAttr('id');
+        
+        // hide and show of biocart
+        // $(".profile svg").hide('200', function() {
+        // 	$(".close").show('4000');
+
+        // });
+		
+
 		// if(jPM.on){		
 		// }
 		// bigSlide.close();
@@ -502,6 +511,12 @@ $(".profile").click(function(event) {
 				box.children('.name').velocity("transition.slideRightIn",{duration:1000,delay:1000});
 				box.children('.id').velocity("transition.slideLeftIn",{duration:1000,delay:500});
 				box.children('.biography').velocity("transition.shrinkIn",{duration:1000,delay:2000});
+				box.children('.share-buttons-bio').velocity("transition.slideUpIn",{duration:2000,delay:2500,complete:function() {
+					
+        	$(".close").show('4000');
+
+				}});
+				// $(".close").css('marginTop', '-400px');
 				// $(".close").css({
     //     				marginTop: '-380'
     //             });
@@ -510,9 +525,6 @@ $(".profile").click(function(event) {
 	}
 
 // } else if rwd
-        $(".profile svg").hide('400', function() {
-        	$(".close").show('500');
-        });
 
 		// $(".close svg").fadeIn(1000);
 	

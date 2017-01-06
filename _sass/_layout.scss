@@ -759,6 +759,10 @@
         display:none;
 
     }
+    .share-buttons-bio{
+        display: none;
+
+    }
 
     @include media-query($on-palm){
         margin-right:75%;
@@ -779,8 +783,12 @@
     // -webkit-border-radius:50%;
     // -moz-border-radius:50%;
     // border-radius:50%;
-    margin-top:-385px;
-    margin-left:25px;
+    // margin-top:-345px;
+    // margin-left:120%;
+    position: relative;
+    top:-480px;
+    left:200px;
+    z-index:120000 !important;
     color:#828282 !important;
     float:left;
     // position:fix !important;
@@ -797,6 +805,7 @@
     -moz-border-radius:5px;
     border-radius:5px;
     padding:20px;
+    z-index: 10000;
     // padding-right:40px;
     text-align:center !important;
     width:150px;
@@ -809,13 +818,16 @@
     // display:none;
     h4 {
         display:none;
-         margin:0 auto 8px;
+        margin:0 auto 8px;
+        z-index: 15000;
     }
     .id {
       display:none;
       margin:0 auto 8px;
+      z-index: 15000;
     }
     .pro-pic{
+        z-index: 15000;
         width:100px;
         height:100px;
         border-radius:100%;
@@ -824,9 +836,51 @@
         display:none;
     }
     .biography{
+        z-index: 15000;
         display:none;
-         margin:5px auto;
+        margin:5px auto;
          // text-align:middle;
+    }
+    .share-buttons-bio
+    {
+        
+            // float:left;
+            display: none;
+            text-align:left !important;
+            // margin-left:100px;
+            margin-top: 20px;
+            margin-right: 10px;
+            // width: 100px !important; 
+            z-index:20000 !important;
+            // min-width: 100px !important;
+            list-style: none;
+            padding: 0;
+            li{
+                 margin-left:10px !important;
+                 display: inline;
+                 i{
+                    color:#CECECE;
+                    &.fa-facebook-square:hover{
+                        color:#4862A3;
+                    }
+                    &.fa-twitter-square:hover{
+                        color:#35D6FF;
+                    }
+                     &.fa-linkedin-square:hover{
+                        color:#0976B4;
+                    }
+                    &.fa-google-plus-square:hover{
+                        color:#EE6939;
+                    }
+                    &.fa-github-square:hover{
+                        color:#000000;
+                    }
+                    //  &.fa-wordpress:hover{
+                    //     color:#464646;
+                    // }
+                 }
+            }
+        
     }
 }
 
@@ -879,6 +933,9 @@
     }
 
 }
+
+
+
 
 .picTag
  {
@@ -974,6 +1031,43 @@
          padding:0 10px;
          // text-align:middle;
     }
+    .share-buttons-bio
+    {
+        
+            // float:left;
+            display: none;
+            text-align:left !important;
+            // margin-left:100px;
+            margin-top:-25px;
+            list-style: none;
+            padding: 0;
+            li{
+                 margin-left:10px !important;
+                 display: inline;
+                 i{
+                    color:#CECECE;
+                    &.fa-facebook-square:hover{
+                        color:#4862A3;
+                    }
+                    &.fa-twitter-square:hover{
+                        color:#35D6FF;
+                    }
+                     &.fa-linkedin-square:hover{
+                        color:#0976B4;
+                    }
+                    &.fa-google-plus-square:hover{
+                        color:#EE6939;
+                    }
+                    &.fa-github-square:hover{
+                        color:#000000;
+                    }
+                    //  &.fa-wordpress:hover{
+                    //     color:#464646;
+                    // }
+                 }
+            }
+        
+     }
     }
 
 //   scrollbar style for pygments code area
