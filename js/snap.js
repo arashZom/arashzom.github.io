@@ -365,13 +365,17 @@ if(matchMedia('only screen and (max-width: 480px)').matches){
 		$('#panel').children('.biography').show();
 		$('#panel').children('.share-buttons-bio').show();
 		$(".profile svg").hide('400', function() {
-				 $(".close").fadeIn();
+			$(".close").css({
+	      		"position":"static",
+	        	"margin-left":"-80px",
+	        	"margin-top":"10px",
+	        }).fadeIn('1000');
 		});
 
-      $(".close").css({
-        	marginTop: '10px',
-        	marginLeft:'-65px'
-        });
+      // $(".close").css({
+      //   	marginTop: '10px',
+      //   	marginLeft:'-65px'
+      //   });
 		
 	});
 
@@ -590,6 +594,31 @@ $(" .close").click(function(event) {
 		// autoExpandScrollbar: true,
 		// mouseWheel:{ enable: true }
    });
+//-------------------------  end ----------------------------
+
+//-------------------------  lazy-loading section ----------------------------
+ $(".lazy").lazy({
+	effect:'fadein',
+	threshold:'200',
+	delay:'5000',
+	afterload:function(element) {
+		// body...
+		element.css({
+			opacity: '1',
+			filter: 'none'
+		});
+	}
+ });
+
+ // $(".lazy").load(function(e) {
+ // 	/* Act on the event */
+ // 	$(this).css({
+ // 		"opacity": "1",
+ // 		"blur":"0"
+ // 	});
+ // });
+
+
 //-------------------------  end ----------------------------
 
 });

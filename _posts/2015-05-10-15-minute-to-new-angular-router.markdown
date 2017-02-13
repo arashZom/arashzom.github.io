@@ -284,7 +284,7 @@ function HomeController ($router) {
 
 {% if page.pic %}
 
-<img src="{{ site.url }}{{ page.img2 }}" alt="" />
+<img class="lazy" src="{{ site.url }}{{ page.img2 }}" alt="" />
 
 {% endif %}
 

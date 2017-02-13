@@ -1,9 +1,15 @@
+GIT
+  remote: git://github.com/eventmachine/eventmachine.git
+  revision: b7d9ef87d6535e05bd5ef4ead1abd53f57d987f2
+  ref: b7d9ef8
+  specs:
+    eventmachine (1.0.4)
+
 GEM
   remote: https://rubygems.org/
   specs:
     addressable (2.5.0)
       public_suffix (~> 2.0, >= 2.0.2)
-    builder (3.2.2)
     colorator (1.1.0)
     ffi (1.9.14-x86-mingw32)
     forwardable-extended (2.6.0)
@@ -45,22 +51,20 @@ GEM
     rouge (1.11.1)
     safe_yaml (1.0.4)
     sass (3.4.23)
-    sitemap_generator (5.2.0)
-      builder (~> 3.0)
 
 PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  eventmachine!
   jalalidate (~> 0.3.3)
   jekyll (= 3.3.1)
   jekyll-feed (~> 0.6)
   minima (~> 2.0)
   pygments.rb
-  sitemap_generator (~> 5.2)
 
 RUBY VERSION
-   ruby 2.1.7p400
+   ruby 2.2.6p396
 
 BUNDLED WITH
-   1.13.7
+   1.14.3

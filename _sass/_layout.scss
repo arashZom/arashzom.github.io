@@ -122,7 +122,7 @@
     50%{
         transform:rotate(360deg);
     }
-       52%{
+    52%{
         transform:rotate(360deg);
 
     }
@@ -504,6 +504,14 @@
         padding:5px;
         // min-height:10px;
         // margin-bottom:25px;
+        // 
+        // low quality image placeholder pic here
+         // img for lazy loading here 
+        background-image: url('../images/road1.jpg') !important;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        // background-size: ;
+        filter:blur(10%);
     }
 
     p{
