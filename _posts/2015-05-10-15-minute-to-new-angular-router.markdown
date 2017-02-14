@@ -284,10 +284,7 @@ function HomeController ($router) {
 من تلاش كردم تصويري كه اين قضيه رو راحت تر توضيح بده پيدا كنم براي فهم بهتر و به اين شكل رسيدم :
 
 {% if page.pic %}
-<figure class="progressive">
-  <img class="progressive__img progressive--not-loaded" src="{{ site.url }}{{ page.img1 }}" data-progressive="{{ site.url }}{{ page.img2 }}" alt="" />
-</figure>
-
+<img class="angularPic lazy" src="{{ site.url }}{{ page.img2 }}" alt="" />
 {% endif %}
 
 خوب اميد وارم كه از مطلب امروز استفاده ي كافي رو برده باشيد در ضمن اگر در متن بنده اشكالاتي ديد يا حق مطلب به صورت واضح ادا نشده بود بگزاريد به پاي تازه تاسيس بودن بلاگ مطمئن باشيد كه در آينده پست هاي بهتر و با كيفيت تري رو با ياري 

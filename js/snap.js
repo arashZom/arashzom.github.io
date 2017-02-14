@@ -343,8 +343,8 @@ $(window).scroll(function(event) {
 // 	});
 // }
 //----------------------------------------------------------------------///////
-
-if(matchMedia('only screen and (max-width: 480px)').matches){
+setInterval(function(){
+		if(matchMedia('only screen and (max-width: 480px)').matches){
      // scotchPanel.on();
 	 //  scotchPanel = $('#panel').scotchPanel({
 		//     containerSelector: 'body', // As a jQuery Selector
@@ -517,7 +517,11 @@ $(".profile").click(function(event) {
 				box.children('.biography').velocity("transition.shrinkIn",{duration:1000,delay:2000});
 				box.children('.share-buttons-bio').velocity("transition.slideUpIn",{duration:2000,delay:2500,complete:function() {
 					
-        	$(".close").show('4000');
+        	$(".close").css({
+        		"position":"relative",
+        		"left":"200px",
+        		"margin-left":"0"
+        	}).show('4000');
 
 				}});
 				// $(".close").css('marginTop', '-400px');
@@ -574,6 +578,9 @@ $(" .close").click(function(event) {
 
 }// end of the responsive section
 
+}, 120);
+
+
 //-------------------------  mailchimp form -----------------------------
    $(".newsletter .mailchimp0").formchimp({
    		// 'appendElement' : '.mce-responses',//where the new element, containing the messages from Mailchimp will be appended to.
@@ -598,41 +605,44 @@ $(" .close").click(function(event) {
 
 //-------------------------  lazy-loading section ----------------------------
  
-progressively.init({
-	delay:50,
-	throttle:300,
-	imgload: function(elem) {
-    console.log(elem);
-  },
-    afterload: function() {
-    console.log('All images have finished loading!');
-  }
-});
+// progressively.init({
+// 	delay:50,
+// 	throttle:300,
+// 	imgload: function(elem) {
+//     console.log(elem);
+//   },
+//     afterload: function() {
+//     console.log('All images have finished loading!');
+//   }
+// });
 
- // $(".lazy").lazy({
-	// effect:'fadein',
-	// // threshold:'200',
-	// effectTime:1000,
-	// // delay:5000,
-	// afterLoad:function(element,response) {
-	// 	// body...
-	// 	// element.css({
-	// 	// 	opacity: '1',
-	// 	// 	filter: 'none'
-	// 	// });
-	// 	element.style.filter = "none";
-	// 	element.style.opacity = "100%";
-	// 	response(true);
-	// },
-	// onError:function(err,response){
-	// 	console.log(err);
-	// 	response(false);
+ $(".lazy").lazy({
+	effect:'fadein',
+	// threshold:'200',
+	effectTime:2500,
+	delay:10000,
+	afterLoad:function(element,response) {
+		// body...
+		// element.css({
+		// 	opacity: '1',
+		// 	filter: 'none'
+		// });
+		// element.style.filter = "none";
+		console.log(element);
+		// element.addClass("lazy-loaded");
+		element.classList.add('lazy-loaded');
+		// element.style.opacity = "100%";
+		response(true);
+	},
+	onError:function(err,response){
+		console.log(err);
+		// response(false);
+	}
+	// onLoad:function(element,res) {
+	//   console.log(element);
+	//   res(true);	
 	// }
-	// // onLoad:function(element,res) {
-	// //   console.log(element);
-	// //   res(true);	
-	// // }
- // });
+ });
 
  // $(".lazy").load(function(e) {
  // 	/* Act on the event */

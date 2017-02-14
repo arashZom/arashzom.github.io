@@ -509,11 +509,11 @@
         
 
          // img for lazy loading here 
-        // background-image: url('../images/road1(small).jpg') !important;
-        // background-repeat: no-repeat;
-        // background-position: 50% 50%;
+        background-image: url('../images/road1(small).jpg') !important;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
         // // background-size: 100% 100%;
-        // background-size: cover;
+        background-size: inherit;
         // background-size: ;
         // filter:blur(10px);
     }
@@ -522,12 +522,12 @@
         dir: rtl !important;
     }
 
-    p > img.lazy{
-        // background-image: url('../images/new-angular-router(small).png') !important;
-        // background-repeat: no-repeat;
-        // background-position: 50% 50%;
+    p > img.angularPic{
+        background-image: url('../images/new-angular-router(small).png') !important;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
         // background-size: cover;
-        // background-size: 100% 100%;
+        background-size:inherit;
         // filter:blur(10px);
     }
 
@@ -1116,5 +1116,23 @@
         color:white;
     }
 
+    @include media-query($on-laptop) {
+        width:100%;
+    }
+
+    @include media-query($on-palm) {
+        width:$on-palm !important;
+    }
 }
 
+// lazy loading styling
+.lazy{
+    // -webkit-filter:blur(7px);
+    // filter:blur(7px);
+    // transition:filter 2000ms,-webkit-filter 2000ms;
+}
+
+.lazy-loaded{
+    -webkit-filter:blur(0);
+    filter:blur(0);
+}
