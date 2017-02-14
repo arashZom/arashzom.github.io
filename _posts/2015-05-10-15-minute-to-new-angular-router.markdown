@@ -3,6 +3,7 @@ layout: post
 title:  "پانزده دقيقه براي آشنايي با روتر جديد انگيولار"
 imgUrl: "/images/road1.jpg"
 img2: "/images/new-angular-router.png"
+img1: "/images/new-angular-router(small).png"
 pic: true
 date:   2015-05-10 09:00:00
 categories:  start
@@ -283,8 +284,9 @@ function HomeController ($router) {
 من تلاش كردم تصويري كه اين قضيه رو راحت تر توضيح بده پيدا كنم براي فهم بهتر و به اين شكل رسيدم :
 
 {% if page.pic %}
-
-<img class="lazy" src="{{ site.url }}{{ page.img2 }}" alt="" />
+<figure class="progressive">
+  <img class="progressive__img progressive--not-loaded" src="{{ site.url }}{{ page.img1 }}" data-progressive="{{ site.url }}{{ page.img2 }}" alt="" />
+</figure>
 
 {% endif %}
 

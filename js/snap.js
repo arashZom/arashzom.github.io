@@ -597,18 +597,42 @@ $(" .close").click(function(event) {
 //-------------------------  end ----------------------------
 
 //-------------------------  lazy-loading section ----------------------------
- $(".lazy").lazy({
-	effect:'fadein',
-	threshold:'200',
-	delay:'5000',
-	afterload:function(element) {
-		// body...
-		element.css({
-			opacity: '1',
-			filter: 'none'
-		});
-	}
- });
+ 
+progressively.init({
+	delay:50,
+	throttle:300,
+	imgload: function(elem) {
+    console.log(elem);
+  },
+    afterload: function() {
+    console.log('All images have finished loading!');
+  }
+});
+
+ // $(".lazy").lazy({
+	// effect:'fadein',
+	// // threshold:'200',
+	// effectTime:1000,
+	// // delay:5000,
+	// afterLoad:function(element,response) {
+	// 	// body...
+	// 	// element.css({
+	// 	// 	opacity: '1',
+	// 	// 	filter: 'none'
+	// 	// });
+	// 	element.style.filter = "none";
+	// 	element.style.opacity = "100%";
+	// 	response(true);
+	// },
+	// onError:function(err,response){
+	// 	console.log(err);
+	// 	response(false);
+	// }
+	// // onLoad:function(element,res) {
+	// //   console.log(element);
+	// //   res(true);	
+	// // }
+ // });
 
  // $(".lazy").load(function(e) {
  // 	/* Act on the event */
