@@ -616,33 +616,33 @@ $(" .close").click(function(event) {
 //   }
 // });
 
- $(".lazy").lazy({
-	effect:'fadein',
-	// threshold:'200',
-	effectTime:2500,
-	delay:10000,
-	afterLoad:function(element,response) {
-		// body...
-		// element.css({
-		// 	opacity: '1',
-		// 	filter: 'none'
-		// });
-		// element.style.filter = "none";
-		console.log(element);
-		// element.addClass("lazy-loaded");
-		element.classList.add('lazy-loaded');
-		// element.style.opacity = "100%";
-		response(true);
-	},
-	onError:function(err,response){
-		console.log(err);
-		// response(false);
-	}
-	// onLoad:function(element,res) {
-	//   console.log(element);
-	//   res(true);	
+ // $(".lazy").lazy({
+	// effect:'fadein',
+	// // threshold:'200',
+	// effectTime:2500,
+	// delay:10000,
+	// afterLoad:function(element,response) {
+	// 	// body...
+	// 	// element.css({
+	// 	// 	opacity: '1',
+	// 	// 	filter: 'none'
+	// 	// });
+	// 	// element.style.filter = "none";
+	// 	console.log(element);
+	// 	// element.addClass("lazy-loaded");
+	// 	element.classList.add('lazy-loaded');
+	// 	// element.style.opacity = "100%";
+	// 	response(true);
+	// },
+	// onError:function(err,response){
+	// 	console.log(err);
+	// 	// response(false);
 	// }
- });
+	// // onLoad:function(element,res) {
+	// //   console.log(element);
+	// //   res(true);	
+	// // }
+ // });
 
  // $(".lazy").load(function(e) {
  // 	/* Act on the event */

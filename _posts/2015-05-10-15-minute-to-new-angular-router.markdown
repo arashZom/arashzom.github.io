@@ -1,9 +1,10 @@
 ---
 layout: post
-title:  "پانزده دقيقه براي آشنايي با روتر جديد انگيولار"
+title:  "15 دقيقه براي آشنايي با روتر جديد انگيولار"
 imgUrl: "/images/road1.jpg"
 img2: "/images/new-angular-router.png"
 img1: "/images/new-angular-router(small).png"
+lqip: "/images/road1(small).jpg"
 pic: true
 date:   2015-05-10 09:00:00
 categories:  start
@@ -283,8 +284,9 @@ function HomeController ($router) {
 اين يك مفهوم خيلي قدرتمند است و به ما اجازه مي ده كه كامپوننت هايي بسازيم كه تنظيمات روت <bdo dir="ltr">embedded</bdo> شده ي خودشون رو داشته باشند.
 من تلاش كردم تصويري كه اين قضيه رو راحت تر توضيح بده پيدا كنم براي فهم بهتر و به اين شكل رسيدم :
 
+<!-- src="{{ site.url }}{{ page.img1 }}" -->
 {% if page.pic %}
-<img class="angularPic lazyload" src="{{ site.url }}{{ page.img1 }}" data-src="{{ site.url }}{{ page.img2 }}" alt="" />
+<img class="angularPic lazyload"  data-src="{{ site.url }}{{ page.img2 }}" alt="" />
 {% endif %}
 
 خوب اميد وارم كه از مطلب امروز استفاده ي كافي رو برده باشيد در ضمن اگر در متن بنده اشكالاتي ديد يا حق مطلب به صورت واضح ادا نشده بود بگزاريد به پاي تازه تاسيس بودن بلاگ مطمئن باشيد كه در آينده پست هاي بهتر و با كيفيت تري رو با ياري 
