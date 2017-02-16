@@ -1,6 +1,7 @@
 ---
 layout: default
 comments: true
+lqip: "/images/road1(small).jpg"
 ---
 <div class="post">
 
@@ -12,14 +13,14 @@ comments: true
   <article class="post-content">
     {% if page.pic %}
     <!-- <div class="picTag">-->    
-          <picture class="lazy">
-              <source srcset="{{site.url}}{{page.imgUrl}}" media="(min-width: 40em) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 40em) and (min-resolution: 144dpi)">
-              <source srcset="{{site.url}}{{page.imgUrl}}" media="(min-width: 40em)">
-              <source srcset="{{site.url}}{{page.imgUrl}}" media="(min-width: 30em) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 30em) and (min-resolution: 144dpi)">
-              <source srcset="{{site.url}}{{page.imgUrl}}" media="(min-width: 30em)">
-              <source srcset="{{site.url}}{{page.imgUrl}}" media="(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)">
-              <source srcset="{{site.url}}{{page.imgUrl}}">
-              <img srcset="{{site.url}}{{page.imgUrl}}" alt="" />
+          <picture>
+              <source data-srcset="{{site.url}}{{page.imgUrl}}" media="(min-width: 40em) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 40em) and (min-resolution: 144dpi)">
+              <source data-srcset="{{site.url}}{{page.imgUrl}}" media="(min-width: 40em)">
+              <source data-srcset="{{site.url}}{{page.imgUrl}}" media="(min-width: 30em) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 30em) and (min-resolution: 144dpi)">
+              <source data-srcset="{{site.url}}{{page.imgUrl}}" media="(min-width: 30em)">
+              <source data-srcset="{{site.url}}{{page.imgUrl}}" media="(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)">
+              <source data-srcset="{{site.url}}{{page.imgUrl}}">
+              <img src="{{site.url}}{{page.lqip}}" data-src="{{site.url}}{{page.imgUrl}}" alt="" class="lazyload" />
           </picture>
     <!-- </div> --> 
     {% endif %}

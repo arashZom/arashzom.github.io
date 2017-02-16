@@ -509,11 +509,11 @@
         
 
          // img for lazy loading here 
-        background-image: url('../images/road1(small).jpg') !important;
-        background-repeat: no-repeat;
-        background-position: 50% 50%;
-        // // background-size: 100% 100%;
-        background-size: inherit;
+        // background-image: url('../images/road1(small).jpg') !important;
+        // background-repeat: no-repeat;
+        // background-position: 50% 50%;
+        // // // background-size: 100% 100%;
+        // background-size: inherit;
         // background-size: ;
         // filter:blur(10px);
     }
@@ -523,11 +523,11 @@
     }
 
     p > img.angularPic{
-        background-image: url('../images/new-angular-router(small).png') !important;
-        background-repeat: no-repeat;
-        background-position: 50% 50%;
-        // background-size: cover;
-        background-size:inherit;
+        // background-image: url('../images/new-angular-router(small).png') !important;
+        // background-repeat: no-repeat;
+        // background-position: 50% 50%;
+        // // background-size: cover;
+        // background-size:inherit;
         // filter:blur(10px);
     }
 
@@ -1126,13 +1126,14 @@
 }
 
 // lazy loading styling
-.lazy{
-    // -webkit-filter:blur(7px);
-    // filter:blur(7px);
-    // transition:filter 2000ms,-webkit-filter 2000ms;
+.lazyload,
+.lazyloading{
+    -webkit-filter:blur(7px);
+    filter:blur(7px);
+    transition:filter 2000ms,-webkit-filter 2000ms;
 }
 
-.lazy-loaded{
+.lazyloaded{
     -webkit-filter:blur(0);
     filter:blur(0);
 }
