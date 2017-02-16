@@ -47,20 +47,385 @@ var twoBb1y = twoBb.cy-220;
 var threeBb1x = threeBb.cx-75;
 var threeBb1y = threeBb.cy-175;
 
-$(window).resize(function(event) {
+$(window).load(function() {
 	/* Act on the event */
- if($(window).width() >= 480 && $('.scotch-panel-canvas').hasClass('scotch-is-showing')){
+
+if(matchMedia('only screen and (max-width: 480px)').matches){
+     // scotchPanel.on();
+     $(".profile").children('div').first().hide();
 	
+
+	$(".profile").click(function(event) {
+			/* Act on the event */
+		scotchPanel.open();
+		$('#panel').children('.pro-pic').show();
+		$('#panel').children('.name').show();
+		$('#panel').children('.id').show();
+		$('#panel').children('.biography').show();
+		$('#panel').children('.share-buttons-bio').show();
+		$(".profile svg").hide('400', function() {
+			$(".close").css({
+	      		"position":"static",
+	        	"margin-left":"-80px",
+	        	"margin-top":"10px",
+	        }).fadeIn('1000');
+		});
+
+      
+		
+	});
+
+		$(".close").click(function(event) {
+			/* Act on the event */
+			    event.preventDefault();
+				$(this).fadeOut('400', function() {
+					// $(this).hide();
+					$(".close").attr('style', '');
+					scotchPanel.close();
+					// $(".profile").fadeIn();			
+					$(".profile svg").fadeIn();
+	              });
+		});
+
+}else if(!matchMedia("only screen and (max-width: 480px)").matches){
+
+	 scotchPanel.off();
+
+	
+//--------- click on the id cart icon--------------------------
+$(".profile").click(function(event) {
+	/* Act on the event */
+	event.preventDefault();
+	var box = $(this).children('div').first();
+	 scotchPanel.close();
+   $(".profile svg").hide();
+	
+
+	//for desktop version
+	if(!box.hasClass('bio')){	
+	  box.addClass('bio');
+	  // $elem = $(this).children('.bio');
+	  if(box.hide())
+	  {
+	  	box.show();
+	  }
+		
+     
+				box.children('.pro-pic').velocity("transition.fadeIn",{duration:1000,delay:250});
+				box.children('.name').velocity("transition.slideRightIn",{duration:1000,delay:1000});
+				box.children('.id').velocity("transition.slideLeftIn",{duration:1000,delay:500});
+				box.children('.biography').velocity("transition.shrinkIn",{duration:1000,delay:2000});
+				box.children('.share-buttons-bio').velocity("transition.slideUpIn",{duration:2000,delay:2500,complete:function() {
+					
+        	$(".close").css({
+        		"position":"relative",
+        		// "top":"5px",
+        		"left":"175px",
+        		"margin-left":"0"
+        	}).show('2000');
+
+				}});
+		
+				
+	}
+
+
+	
+});
+
+
+
+$(" .close").click(function(event) {
+
+		 scotchPanel.close();
+	
+	var box1 = $(".profile").children('div').first();
+	$(".profile").children("div.bio").hide();
+
+	$(this).fadeOut('400', function() {
+		box1.removeClass('bio');
+		$(".profile svg").fadeIn('500');
+	});
+
+
+});
+
+}// end of the responsive section 
+
+
+});
+
+
+setInterval(function() {
+  if($(window).width() >= 480 ){
+	// console.log($(".profile").children('div').first());
+	// 
+		// console.log(document.querySelector('div.profile').childNodes[3].style);
 		 scotchPanel.close();
 		 // scotchPanel.off();
-		 $(".close").hide();
-		 $(".profile svg").show();
+		 // $(".close").hide();
+		 // $(".profile svg").show();
+	}else{
+		$(".profile").children('div').first().css('display', 'none');
 	}
+},200);
+
+$(window).resize(function(event) {
+	/* Act on the event */
+	if($(window).width() >= 480 && $('.scotch-panel-canvas').hasClass('scotch-is-showing')){
+		
+		 	scotchPanel.close();
+			 // scotchPanel.off();
+		 	$(".close").hide();
+		 	$(".profile svg").show();
+	}else{
+		$(".profile").children('div').first().css('display', 'none');
+	}
+
+  //-------------------------------- this is RESPONSIVE SECTION ---------------------------------------------
+ if(matchMedia('only screen and (max-width: 480px)').matches){
+     // scotchPanel.on();
+     
+	 //  scotchPanel = $('#panel').scotchPanel({
+		//     containerSelector: 'body', // As a jQuery Selector
+		//     direction: 'left', // Make it toggle in from the left
+		//     duration: 300, // Speed in ms how fast you want it to be
+		//     transition: 'ease', // CSS3 transition type: linear, ease, ease-in, ease-out, ease-in-out, cubic-bezier(P1x,P1y,P2x,P2y)
+		//     // clickSelector: '.profile', // Enables toggling when clicking elements of this class
+		//     distanceX: '40%', // Size fo the toggle
+		//     enableEscapeKey: true // Clicking Esc will close the panel
+		// });
+
+	$(".profile").click(function(event) {
+			/* Act on the event */
+		scotchPanel.open();
+		$('#panel').children('.pro-pic').show();
+		$('#panel').children('.name').show();
+		$('#panel').children('.id').show();
+		$('#panel').children('.biography').show();
+		$('#panel').children('.share-buttons-bio').show();
+		$(".profile svg").hide('400', function() {
+			$(".close").css({
+	      		"position":"static",
+	        	"margin-left":"-80px",
+	        	"margin-top":"10px",
+	        }).fadeIn('1000');
+		});
+
+      // $(".close").css({
+      //   	marginTop: '10px',
+      //   	marginLeft:'-65px'
+      //   });
+		
+	});
+
+       // $(".profile svg").css({
+       // 	marginLeft: '-25px',
+       // 	property2: '-10px'
+       // });
+
+		$(".close").click(function(event) {
+			/* Act on the event */
+			    event.preventDefault();
+				$(this).fadeOut('400', function() {
+					// $(this).hide();
+					$(".close").attr('style', '');
+					scotchPanel.close();
+					// $(".profile").fadeIn();			
+					$(".profile svg").fadeIn();
+	              });
+		});
+
+
+		// $(".close").attr('style', '');
+
+}else if(!matchMedia("only screen and (max-width: 480px)").matches){
+
+	 scotchPanel.off();
+
+	 // $(".profile svg").attr('style', '');
+	 // $("#panel").remove();
+//--------- click on the id cart icon--------------------------
+$(".profile").click(function(event) {
+	/* Act on the event */
+	event.preventDefault();
+	var box = $(this).children('div').first();
+	 scotchPanel.close();
+   $(".profile svg").hide();
+	// if(jPM.getMenu())
+       // {
+       	  // console.log(jPM.getMenu());
+       	  // jPM.menu.remove();
+       		// $("#jPanelMenu-menu").remove();
+       // }
+	//left pannel 
+	
+  // smartphone/iphone... maybe run some small-screen related dom scripting?
+
+       
+       // $(".profile svg").wrap('<a href="#menu" class="menu-link"></a>');
+        // $(".profile .close").wrap('<a href="#menu2" class="menu-link2"></a>');
+  //        scotchPanel = $('#panel').scotchPanel({
+		//     containerSelector: 'body', // As a jQuery Selector
+		//     direction: 'left', // Make it toggle in from the left
+		//     duration: 300, // Speed in ms how fast you want it to be
+		//     transition: 'ease', // CSS3 transition type: linear, ease, ease-in, ease-out, ease-in-out, cubic-bezier(P1x,P1y,P2x,P2y)
+		//     clickSelector: '.profile', // Enables toggling when clicking elements of this class
+		//     distanceX: '70%', // Size fo the toggle
+		//     enableEscapeKey: true // Clicking Esc will close the panel
+		// });
+		
+//rwd mode
+      //  scotchPanel.open();
+
+       // {
+   // 	 menu: box,
+   // 	 trigger: '.profile svg'
+			// }
+       // box.addClass('bio');
+       // jPM.menu = box;
+      
+       //	jPM.on();
+        // }
+      // jPM.trigger(true);
+ 
+
+///what should happen in rwd mode
+  //       $('#panel').children('.pro-pic').show();
+		// $('#panel').children('.name').show();
+		// $('#panel').children('.id').show();
+		// $('#panel').children('.biography').show();
+  //     $(".close").css({
+  //       	marginTop: '20px',
+  //       	marginLeft:'-15px'
+  //       });
+      
+
+	// box.attr({
+	// 	class: '',
+	// 	id: ''
+	// });
+    // if(scotchPanel){
+    // 		scotchPanel.remove();
+    // }
+    // scotchPanel.close();
+ // if(!matchMedia('only screen and (max-width: 480px)').matches)
+	// jPM.remove();
+    // box1= $(this).children('div').first();
+	// if(box.attr("id")){
+		// box.removeAttr('id');
+        
+        // hide and show of biocart
+        // $(".profile svg").hide('200', function() {
+        // 	$(".close").show('4000');
+
+        // });
+		
+
+		// if(jPM.on){		
+		// }
+		// bigSlide.close();
+
+
+	//for desktop version
+	if(!box.hasClass('bio')){	
+	  box.addClass('bio');
+	  // $elem = $(this).children('.bio');
+	  if(box.hide())
+	  {
+	  	box.show();
+	  }
+			// $elem.append('');
+			// $elem.append('<img class="pro-pic" src="images/arashtext.jpg" />')
+			// $elem.append('<h4 class="name">آرش اورنگ پور</h4>');
+			// $elem.append('<span class="id">طراح وب و تجربه كاربري</span>');
+			// $elem.append('<p class="biography"></p>');
+   //          $elem.children('.biography').text("شخصي هستم دوست دار تجربه كاربري و علاقه مند به طراحي رابط كاربري");
+      // $elem.load("file://C:/Users/Dell/ooarashoo/bio.html",function(response,status,xhr){
+      //  	   if(status == "error")
+      //  	   {
+      //  	   	console.log(xhr.status+" "+xhr.statusText);
+      //  	   }
+      //  	   $(this).append(response);
+      //  	   console.log(response);
+      //  	   console.log("file complete");
+      //  });
+			// $elem.append('<div>{% include bio.html %}</div>');
+     
+				box.children('.pro-pic').velocity("transition.fadeIn",{duration:1000,delay:250});
+				box.children('.name').velocity("transition.slideRightIn",{duration:1000,delay:1000});
+				box.children('.id').velocity("transition.slideLeftIn",{duration:1000,delay:500});
+				box.children('.biography').velocity("transition.shrinkIn",{duration:1000,delay:2000});
+				box.children('.share-buttons-bio').velocity("transition.slideUpIn",{duration:2000,delay:2500,complete:function() {
+					
+        	$(".close").css({
+        		"position":"relative",
+        		// "top":"5px",
+        		"left":"175px",
+        		"margin-left":"0"
+        	}).show('2000');
+
+				}});
+				// $(".close").css('marginTop', '-400px');
+				// $(".close").css({
+    //     				marginTop: '-380'
+    //             });
+					// $(".close").attr('style', '');
+				
+	}
+
+// } else if rwd
+
+		// $(".close svg").fadeIn(1000);
+	
+});
+
+
+
+$(" .close").click(function(event) {
+
+		 scotchPanel.close();
+	/* Act on the event */
+	// event.preventDefault();
+	//rwd mode
+	// if(matchMedia('only screen and (max-width: 480px)').matches){
+        // scotchPanel.remove();
+  //       $('#panel').children('.pro-pic').hide();
+		// $('#panel').children('.name').hide();
+		// $('#panel').children('.id').hide();
+		// $('#panel').children('.biography').hide();
+	// rwd mode
+		// if ($('.scotch-panel-canvas').hasClass('scotch-is-showing')) {
+				
+		// 		console.log("oops");
+		// 		$("#panel").velocity("transition.slideLeftOut",{duration:1000,delay:1000});
+		// 		scotchPanel.remove();
+		// 		// scotchPanel.close();
+		// }
+		// $(this).fadeOut('400', function() {
+		// 	$(".profile svg").fadeIn();
+		// });
+	// rwd mode
+	// }else{
+	var box1 = $(".profile").children('div').first();
+	$(".profile").children("div.bio").hide();
+	// $(".close").hide();
+	$(this).fadeOut('400', function() {
+		box1.removeClass('bio');
+		$(".profile svg").fadeIn('500');
+	});
+  // } rwd mode
+
+});
+
+}// end of the responsive section 
+
+
   });
 
 
 s.mouseover(function(event) {
-	console.log("mouse over");
+	// console.log("mouse over");
 
 	event.preventDefault();
 	/* Act on the event */
@@ -88,7 +453,7 @@ s.mouseover(function(event) {
 	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 if($.browser.webkit){	
-	console.log("webkit browser");
+	// console.log("webkit browser");
 			//  here is snapsvg animation
  		one.animate({ transform:"r360,"+ oneBb.cx +","+ oneBb.cy+"s1.02,1.02,"+oneBb1x+","+oneBb1y,strokeWidth:7},
  			2000);
@@ -253,7 +618,7 @@ $(window).scroll(function(event) {
 	// console.log("scroll top :"+$(this).scrollTop());
 	event.preventDefault();
 		// console.log("page content :"+$(".site-header").height()+$(".page-content").height());
-		console.log("scroll:"+$(this).scrollTop());	
+		// console.log("scroll:"+$(this).scrollTop());	
 		var scrollFromTop = $(this).scrollTop();
 		var heightOfPage = $(".site-header").height() + $(".page-content").height();
 		var height = $(".profile svg").outerHeight() + 20;		
@@ -305,7 +670,7 @@ $(window).scroll(function(event) {
 	// }
 	if(scrollFromTop >= heightOfPage)
 	{
-		console.log("something happend:" + scrollFromTop);
+		// console.log("something happend:" + scrollFromTop);
 		// $(".page-content .profile ").attr('style', '');
 		// $(".page-content .profile svg").attr('style', '');
 	// 	 $(".page-content .profile").attr('style','');
@@ -343,242 +708,10 @@ $(window).scroll(function(event) {
 // 	});
 // }
 //----------------------------------------------------------------------///////
-setInterval(function(){
-		if(matchMedia('only screen and (max-width: 480px)').matches){
-     // scotchPanel.on();
-	 //  scotchPanel = $('#panel').scotchPanel({
-		//     containerSelector: 'body', // As a jQuery Selector
-		//     direction: 'left', // Make it toggle in from the left
-		//     duration: 300, // Speed in ms how fast you want it to be
-		//     transition: 'ease', // CSS3 transition type: linear, ease, ease-in, ease-out, ease-in-out, cubic-bezier(P1x,P1y,P2x,P2y)
-		//     // clickSelector: '.profile', // Enables toggling when clicking elements of this class
-		//     distanceX: '40%', // Size fo the toggle
-		//     enableEscapeKey: true // Clicking Esc will close the panel
-		// });
 
-	$(".profile").click(function(event) {
-			/* Act on the event */
-		scotchPanel.open();
-		$('#panel').children('.pro-pic').show();
-		$('#panel').children('.name').show();
-		$('#panel').children('.id').show();
-		$('#panel').children('.biography').show();
-		$('#panel').children('.share-buttons-bio').show();
-		$(".profile svg").hide('400', function() {
-			$(".close").css({
-	      		"position":"static",
-	        	"margin-left":"-80px",
-	        	"margin-top":"10px",
-	        }).fadeIn('1000');
-		});
-
-      // $(".close").css({
-      //   	marginTop: '10px',
-      //   	marginLeft:'-65px'
-      //   });
-		
-	});
-
-       // $(".profile svg").css({
-       // 	marginLeft: '-25px',
-       // 	property2: '-10px'
-       // });
-
-		$(".close").click(function(event) {
-			/* Act on the event */
-			    event.preventDefault();
-				$(this).fadeOut('400', function() {
-					// $(this).hide();
-					$(".close").attr('style', '');
-					scotchPanel.close();
-					// $(".profile").fadeIn();			
-					$(".profile svg").fadeIn();
-	              });
-		});
-
-
-		// $(".close").attr('style', '');
-
-}else if(!matchMedia("only screen and (max-width: 480px)").matches){
-
-	 scotchPanel.off();
-	 // $(".profile svg").attr('style', '');
-	 // $("#panel").remove();
-//--------- click on the id cart icon--------------------------
-$(".profile").click(function(event) {
-	/* Act on the event */
-	event.preventDefault();
-	var box = $(this).children('div').first();
-	 scotchPanel.close();
-   $(".profile svg").hide();
-	// if(jPM.getMenu())
-       // {
-       	  // console.log(jPM.getMenu());
-       	  // jPM.menu.remove();
-       		// $("#jPanelMenu-menu").remove();
-       // }
-	//left pannel 
 	
-  // smartphone/iphone... maybe run some small-screen related dom scripting?
-
-       
-       // $(".profile svg").wrap('<a href="#menu" class="menu-link"></a>');
-        // $(".profile .close").wrap('<a href="#menu2" class="menu-link2"></a>');
-  //        scotchPanel = $('#panel').scotchPanel({
-		//     containerSelector: 'body', // As a jQuery Selector
-		//     direction: 'left', // Make it toggle in from the left
-		//     duration: 300, // Speed in ms how fast you want it to be
-		//     transition: 'ease', // CSS3 transition type: linear, ease, ease-in, ease-out, ease-in-out, cubic-bezier(P1x,P1y,P2x,P2y)
-		//     clickSelector: '.profile', // Enables toggling when clicking elements of this class
-		//     distanceX: '70%', // Size fo the toggle
-		//     enableEscapeKey: true // Clicking Esc will close the panel
-		// });
-		
-//rwd mode
-      //  scotchPanel.open();
-
-       // {
-   // 	 menu: box,
-   // 	 trigger: '.profile svg'
-			// }
-       // box.addClass('bio');
-       // jPM.menu = box;
-      
-       //	jPM.on();
-        // }
-      // jPM.trigger(true);
- 
-
-///what should happen in rwd mode
-  //       $('#panel').children('.pro-pic').show();
-		// $('#panel').children('.name').show();
-		// $('#panel').children('.id').show();
-		// $('#panel').children('.biography').show();
-  //     $(".close").css({
-  //       	marginTop: '20px',
-  //       	marginLeft:'-15px'
-  //       });
-      
-
-	// box.attr({
-	// 	class: '',
-	// 	id: ''
-	// });
-    // if(scotchPanel){
-    // 		scotchPanel.remove();
-    // }
-    // scotchPanel.close();
- // if(!matchMedia('only screen and (max-width: 480px)').matches)
-	// jPM.remove();
-    // box1= $(this).children('div').first();
-	// if(box.attr("id")){
-		// box.removeAttr('id');
-        
-        // hide and show of biocart
-        // $(".profile svg").hide('200', function() {
-        // 	$(".close").show('4000');
-
-        // });
-		
-
-		// if(jPM.on){		
-		// }
-		// bigSlide.close();
 
 
-	//for desktop version
-	if(!box.hasClass('bio')){	
-	  box.addClass('bio');
-	  // $elem = $(this).children('.bio');
-	  if(box.hide())
-	  {
-	  	box.show();
-	  }
-			// $elem.append('');
-			// $elem.append('<img class="pro-pic" src="images/arashtext.jpg" />')
-			// $elem.append('<h4 class="name">آرش اورنگ پور</h4>');
-			// $elem.append('<span class="id">طراح وب و تجربه كاربري</span>');
-			// $elem.append('<p class="biography"></p>');
-   //          $elem.children('.biography').text("شخصي هستم دوست دار تجربه كاربري و علاقه مند به طراحي رابط كاربري");
-      // $elem.load("file://C:/Users/Dell/ooarashoo/bio.html",function(response,status,xhr){
-      //  	   if(status == "error")
-      //  	   {
-      //  	   	console.log(xhr.status+" "+xhr.statusText);
-      //  	   }
-      //  	   $(this).append(response);
-      //  	   console.log(response);
-      //  	   console.log("file complete");
-      //  });
-			// $elem.append('<div>{% include bio.html %}</div>');
-     
-				box.children('.pro-pic').velocity("transition.fadeIn",{duration:1000,delay:250});
-				box.children('.name').velocity("transition.slideRightIn",{duration:1000,delay:1000});
-				box.children('.id').velocity("transition.slideLeftIn",{duration:1000,delay:500});
-				box.children('.biography').velocity("transition.shrinkIn",{duration:1000,delay:2000});
-				box.children('.share-buttons-bio').velocity("transition.slideUpIn",{duration:2000,delay:2500,complete:function() {
-					
-        	$(".close").css({
-        		"position":"relative",
-        		"left":"200px",
-        		"margin-left":"0"
-        	}).show('4000');
-
-				}});
-				// $(".close").css('marginTop', '-400px');
-				// $(".close").css({
-    //     				marginTop: '-380'
-    //             });
-					// $(".close").attr('style', '');
-				
-	}
-
-// } else if rwd
-
-		// $(".close svg").fadeIn(1000);
-	
-});
-
-
-
-$(" .close").click(function(event) {
-
-		 scotchPanel.close();
-	/* Act on the event */
-	// event.preventDefault();
-	//rwd mode
-	// if(matchMedia('only screen and (max-width: 480px)').matches){
-        // scotchPanel.remove();
-  //       $('#panel').children('.pro-pic').hide();
-		// $('#panel').children('.name').hide();
-		// $('#panel').children('.id').hide();
-		// $('#panel').children('.biography').hide();
-	// rwd mode
-		// if ($('.scotch-panel-canvas').hasClass('scotch-is-showing')) {
-				
-		// 		console.log("oops");
-		// 		$("#panel").velocity("transition.slideLeftOut",{duration:1000,delay:1000});
-		// 		scotchPanel.remove();
-		// 		// scotchPanel.close();
-		// }
-		// $(this).fadeOut('400', function() {
-		// 	$(".profile svg").fadeIn();
-		// });
-	// rwd mode
-	// }else{
-	var box1 = $(".profile").children('div').first();
-	$(".profile").children("div.bio").hide();
-	// $(".close").hide();
-	$(this).fadeOut('400', function() {
-		box1.removeClass('bio');
-		$(".profile svg").fadeIn('500');
-	});
-  // } rwd mode
-
-});
-
-}// end of the responsive section
-
-}, 120);
 
 
 //-------------------------  mailchimp form -----------------------------

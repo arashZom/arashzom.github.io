@@ -825,7 +825,7 @@
     -webkit-border-radius:5px;
     -moz-border-radius:5px;
     border-radius:5px;
-    padding:20px;
+    padding:20px 5px;
     z-index: 10000;
     // padding-right:40px;
     text-align:center !important;
@@ -877,7 +877,7 @@
             list-style: none;
             padding: 0;
             li{
-                 margin-left:10px !important;
+                 margin-left:5px !important;
                  display: inline;
                  i{
                     color:#CECECE;
