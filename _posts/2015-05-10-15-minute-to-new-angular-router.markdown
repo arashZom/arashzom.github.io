@@ -4,7 +4,7 @@ title:  "15 دقيقه براي آشنايي با روتر جديد انگيول
 imgUrl: "/images/road1.jpg"
 img2: "/images/new-angular-router.png"
 img1: "/images/new-angular-router(small).png"
-lqip: "/images/road1(small).jpg"
+lqip: ""
 pic: true
 date:   2015-05-10 09:00:00
 categories:  start
