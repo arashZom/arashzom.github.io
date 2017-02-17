@@ -167,19 +167,77 @@ setInterval(function() {
 		 // $(".profile svg").show();
 	}else{
 		$(".profile").children('div').first().css('display', 'none');
+		if ($('.scotch-panel-canvas').hasClass('scotch-is-showing') && !$(".close").is(':visible')) {
+			$(".close").show();
+		}
+		// $(".profile svg").show();
 	}
 },200);
 
 $(window).resize(function(event) {
 	/* Act on the event */
-	if($(window).width() >= 480 && $('.scotch-panel-canvas').hasClass('scotch-is-showing')){
-		
-		 	scotchPanel.close();
-			 // scotchPanel.off();
+	if($(window).width() >= 480){
+		if ($('.scotch-panel-canvas').hasClass('scotch-is-showing')) {
+			scotchPanel.close();
 		 	$(".close").hide();
+		 	// if(!$(".profile svg").is(':visible')){
+
 		 	$(".profile svg").show();
+		}
+		 	
+		 	// }
+		 	// }
+		$("figure.highlight")
+		.removeClass('jspScrollable')
+		.css({
+			overflow: "hidden",
+			 padding: "0px",
+			  width: "740px"			
+		});
+			 // scotchPanel.off();
+		 	// $(".close").hide();
+		 	// $(".profile svg").show();
 	}else{
 		$(".profile").children('div').first().css('display', 'none');
+		if($(".profile").children('div').first().hasClass('bio')){
+				$(".profile").children('div').first().removeClass('bio');
+				scotchPanel.open();
+			    $('#panel').children('.pro-pic').show();
+				$('#panel').children('.name').show();
+				$('#panel').children('.id').show();
+				$('#panel').children('.biography').show();
+				$('#panel').children('.share-buttons-bio').show();
+				$(".profile svg").hide('400', function() {
+					$(".close").attr('style', '');
+					$(".close").css({
+			      		"position":"static",
+			        	"margin-left":"-80px",
+			        	"margin-top":"10px",
+			        	"opacity":".5"
+			        }).fadeIn('1000');
+				});	
+
+				 // if(!$(".close").is(':visible')){
+	    //    			$(".close").css({
+			  //     		"position":"static",
+			  //       	"margin-left":"-80px",
+			  //       	"margin-top":"10px",
+			  //       }).show();
+	    //          }
+		}
+	    
+	    		$("figure.highlight").addClass("jspScrollable").css({
+	    			overflow: "hidden", 
+	    			padding:"0px",
+	    			width: $(window).width() - 50
+	    		});;
+
+	    // if(!$(".close").is(':visible')){
+	    //    $(".close").show();
+	    // }
+	    // if(!scotchPanel.on()){
+	    	// $(".profile svg").show();
+	    // }
 	}
 
   //-------------------------------- this is RESPONSIVE SECTION ---------------------------------------------
@@ -205,10 +263,12 @@ $(window).resize(function(event) {
 		$('#panel').children('.biography').show();
 		$('#panel').children('.share-buttons-bio').show();
 		$(".profile svg").hide('400', function() {
+			$(".close").attr('style', '');
 			$(".close").css({
 	      		"position":"static",
 	        	"margin-left":"-80px",
 	        	"margin-top":"10px",
+	        	"opacity":".5"
 	        }).fadeIn('1000');
 		});
 
@@ -362,8 +422,9 @@ $(".profile").click(function(event) {
         		"position":"relative",
         		// "top":"5px",
         		"left":"175px",
-        		"margin-left":"0"
-        	}).show('2000');
+        		"margin-left":"0",
+        		"opacity":".5"
+        	}).show('500');
 
 				}});
 				// $(".close").css('marginTop', '-400px');
@@ -382,7 +443,7 @@ $(".profile").click(function(event) {
 
 
 
-$(" .close").click(function(event) {
+$(".close").click(function(event) {
 
 		 scotchPanel.close();
 	/* Act on the event */
