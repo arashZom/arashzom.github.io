@@ -13,16 +13,18 @@ $(function(){
 		// init scotch slide
 		// var scotchPanel;
 	// transformicons.add([]);	
-     $(".jspDrag").on('mouseover', function(event) {
-               	event.preventDefault();
-               	/* Act on the event */
-               	    $(this).addClass('jspHover');
-               });
-	 $(".jspDrag").on('click', function(event) {
-	 	event.preventDefault();
-	   	/* Act on the event */
-	   	    $(this).addClass('jspActiver');
-	   });
+    
+
+  //    $(".jspDrag").on('mouseover', function(event) {
+  //              	event.preventDefault();
+  //              	/* Act on the event */
+  //              	    $(this).addClass('jspHover');
+  //              });
+	 // $(".jspDrag").on('click', function(event) {
+	 // 	event.preventDefault();
+	 //   	/* Act on the event */
+	 //   	    $(this).addClass('jspActive');
+	 //   });
      
      var scotchPanel = $('#panel').scotchPanel({
 		    containerSelector: 'body', // As a jQuery Selector
