@@ -13,6 +13,17 @@ $(function(){
 		// init scotch slide
 		// var scotchPanel;
 	// transformicons.add([]);	
+     $(".jspDrag").on('mouseover', function(event) {
+               	event.preventDefault();
+               	/* Act on the event */
+               	    $(this).addClass('jspHover');
+               });
+	 $(".jspDrag").on('click', function(event) {
+	 	event.preventDefault();
+	   	/* Act on the event */
+	   	    $(this).addClass('jspActiver');
+	   });
+     
      var scotchPanel = $('#panel').scotchPanel({
 		    containerSelector: 'body', // As a jQuery Selector
 		    direction: 'left', // Make it toggle in from the left
@@ -187,13 +198,26 @@ $(window).resize(function(event) {
 		 	
 		 	// }
 		 	// }
-		$("figure.highlight")
-		.removeClass('jspScrollable')
-		.css({
-			overflow: "hidden",
-			 padding: "0px",
-			  width: "740px"			
-		});
+		 
+		  $("figure.highlight .jspContainer").children('.jspHorizontalBar').remove();
+
+		  $("figure.highlight")
+				.removeClass('jspScrollable')
+				.css({
+							overflow: "hidden",
+							padding: "0px",
+							width: "740px"			
+						});
+				
+				$(".jspContainer").css(
+	    			"width", "740px"
+	    		);
+	    		
+	    		$(".jspContainer .jsPane").css({
+					padding: "0px", 
+					width: "740px",
+					 left: "0px"
+	    		});
 			 // scotchPanel.off();
 		 	// $(".close").hide();
 		 	// $(".profile svg").show();
@@ -224,13 +248,31 @@ $(window).resize(function(event) {
 			  //       	"margin-top":"10px",
 			  //       }).show();
 	    //          }
-		}
+		} 
+
+		var winwidth = $(window).width() - 50 + 'px';
+		var jspdrag = $(window).width() - 198 + 'px';
 	    
 	    		$("figure.highlight").addClass("jspScrollable").css({
 	    			overflow: "hidden", 
 	    			padding:"0px",
 	    			width: $(window).width() - 50
-	    		});;
+	    		});
+
+	    		$(".jspContainer").css(
+	    			"width", $(window).width() - 50 
+	    		);
+	    		$(".jspContainer .jsPane").css({
+					padding: "0px", 
+					width: $(window).width() - 50,
+					 left: "0px"
+	    		});
+			   // <div class=\"jspDrag\" style=\"'+ $(window).width() - 198 +'\"><div class=\"jspDragLeft\"></div><div class=\"jspDragRight\"></div></div>
+               // if (!$(".jspHorizontalBar").get(0)) {
+		    	$(".jspHorizontalBar").remove();
+		    	$(".jspContainer").append('<div class=\"jspHorizontalBar\"><div class=\"jspCap jspCapLeft\"></div><div class=\"jspTrack\" style=\"width:'+ winwidth +'\"><div class=\"jspDrag\" style=\"width:'+ jspdrag +'\"><div class=\"jspDragLeft\"></div><div class=\"jspDragRight\"></div></div></div><div class=\"jspCap jspCapRight\"></div></div>');
+               // }
+               
 
 	    // if(!$(".close").is(':visible')){
 	    //    $(".close").show();
