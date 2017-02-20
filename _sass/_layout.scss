@@ -420,6 +420,24 @@
     .footer-col-3{
         margin: 0  20px  auto  auto !important;        
     }
+
+    .footer-col12{
+        // padding-right: 50px;
+        .powerby{
+            // margin:0 auto;
+            margin-right: 100px !important;
+            margin-bottom: 20px;
+            a{
+                .icon-jekyll-logo{
+
+                }
+
+                .icon-github-logo{
+
+                }
+            }
+        }   
+    }
 }
 
 
@@ -513,7 +531,7 @@
     margin-bottom: $spacing-unit;
     margin-top: $spacing-unit + 40px;
     text-align : right;
-    dir : rtl !important;
+    direction : rtl !important;
 
     picture{
         width:100%;
@@ -536,7 +554,7 @@
     }
 
     p{
-        dir: rtl !important;
+        direction: rtl !important;
     }
 
     p > img.angularPic{
@@ -577,21 +595,22 @@
 {
     width:100% !important;
     margin-top:20px;
+    padding-top: 50px;
     background:#A2A2A2 !important;
     height:80px;
-    line-height:80px;
+    line-height:1.618;
     // padding:0 50%;
     .powerby
     {
         color:#d9caca;
-        margin:20px 40%;
+        margin:auto 40%;
         // float:left;
         // margin-left:-5px;
         // width:200px !important;
         // width:100%;
         .icon-jekyll-logo{
             float:left;
-            margin-top:18px !important;
+            margin-top:-10px !important;
             margin-left:45%;
             // margin-right:10px;
             display: block;
@@ -603,7 +622,7 @@
             // background-size:contain;
         }
         .icon-github-logo{
-            margin-top:25px !important;
+            margin-top:0 !important;
             margin-left:-110px;
             float:left;
             display: block;
