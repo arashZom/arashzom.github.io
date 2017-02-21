@@ -7,6 +7,7 @@
     min-height: 100px;
     // box-shadow:0 5px 20px $grey-color-light;
     background-color:$background-color2;
+    background-image: url('../images/pattern.svg');
     // Positioning context for the mobile navigation icon
     position: relative;
     direction:ltr;
@@ -214,6 +215,7 @@
     direction:rtl;
     padding-top:$spacing-unit;
     background-color:lighten($grey-color,30%);
+    background-image: url('../images/pattern.svg');
 //     background: -webkit-linear-gradient( top, $grey-color-dark , $grey-color-light); /* For Safari 5.1 to 6.0 */
 //   background: -o-linear-gradient(top, $grey-color-dark , $grey-color-light); For Opera 11.1 to 12.0
 //   background: -moz-linear-gradient(top, $grey-color-dark , $grey-color-light); /* For Firefox 3.6 to 15 */
@@ -285,13 +287,14 @@
     text-align:right;
     // min-height:500px;
     background:#E1E1E1; 
+    box-shadow: 1px 1px 5px 1px #A2A2A2;
     // background:#E1E1E1 url("../images/email.svg") no-repeat left 10%; 
     // background-image:;
     // background-repeat:;
     // background-position: ;
     // margin-top:-20px;
     margin-left:30px;
-    padding:10px;
+    padding:20px;
     border-radius:5px;
     .capa{
       // background:;
@@ -301,8 +304,8 @@
       // position:fixed;
       // width:150px;
       // height:150px;  
-      top:5px;
-      left:5px;
+      top:10px;
+      left:20px;
       position:absolute;
       float:left;
       // margin-top:-180px;
@@ -419,6 +422,14 @@
 
     .footer-col-3{
         margin: 0  20px  auto  auto !important;        
+    }
+
+
+    .footer-col .newsletter{
+        padding-left: 10%;
+        input[type="email"]{
+            width: 100% !important;
+        }
     }
 
     .footer-col12{
@@ -602,14 +613,14 @@
     width:100% !important;
     margin-top:20px;
     padding-top: 50px;
-    background:#A2A2A2 !important;
+    background-color:darken(#E1E1E1, 15%);
     height:80px;
     line-height:1.618;
     // padding:0 50%;
     .powerby
     {
         // width: 100em;
-        color:#d9caca;
+        color:#935A5A;
         margin:auto 40%;
         // float:left;
         // margin-left:-5px;

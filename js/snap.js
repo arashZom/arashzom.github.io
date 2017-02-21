@@ -15,11 +15,7 @@ $(function(){
 	// transformicons.add([]);	
 	// 
 	// 
-	// svg charactaristics for firefox :-----------------------------
-	// transform-origin: 85px 135px !important => #svg2 #layer1 .three
-	//  transform-origin: 95px 185px 0 !important; => #svg2 #layer1 .two
-	//  transform-origin: 150px 305px 0 !important => #svg2 #layer1 .one
-    
+	
 
   //    $(".jspDrag").on('mouseover', function(event) {
   //              	event.preventDefault();
@@ -618,6 +614,16 @@ if($.browser.webkit){
 }else if($.browser.mozilla){
     console.log("firefox browser");
 //   event.preventDefault();
+//   
+//   // svg charactaristics for firefox :-----------------------------
+	// transform-origin: 75px 185px !important => #svg2 #layer1 .three
+	//  transform-origin: 65px 235px 0 !important => #svg2 #layer1 .two
+	//  transform-origin: 150px 305px 0 !important => #svg2 #layer1 .one
+    var paths = $("#svg2 g#layer1").children('path');
+	console.log(paths);
+	// paths[0].css('transform-origin','150px 305px 0 !important');
+	// paths[1].css('transform-origin', '65px 235px 0 !important');
+	// paths[2].css('transform-origin', '75px 185px !important');
 
     one.animate({ transform:"r360,"+ oneBb1x +","+ oneBb1y+"s1.02,1.02,"+oneBb1x+","+oneBb1y,strokeWidth:7},
  			2000);
