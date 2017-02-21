@@ -13,6 +13,12 @@ $(function(){
 		// init scotch slide
 		// var scotchPanel;
 	// transformicons.add([]);	
+	// 
+	// 
+	// svg charactaristics for firefox :-----------------------------
+	// transform-origin: 85px 135px !important => #svg2 #layer1 .three
+	//  transform-origin: 95px 185px 0 !important; => #svg2 #layer1 .two
+	//  transform-origin: 150px 305px 0 !important => #svg2 #layer1 .one
     
 
   //    $(".jspDrag").on('mouseover', function(event) {

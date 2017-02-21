@@ -422,18 +422,24 @@
     }
 
     .footer-col12{
+        position: relative;
         // padding-right: 50px;
         .powerby{
+            width:40%;
+            position: absolute;
+            top:50%;
+            transform:translateY(-10px);
             // margin:0 auto;
-            margin-right: 100px !important;
-            margin-bottom: 20px;
+            // margin-right: 100px !important;
+            // margin-bottom: 20px;
+            font-size:.9rem;
             a{
                 .icon-jekyll-logo{
-
+                    transform:translateY(-30px) translateX(-80px);
                 }
 
                 .icon-github-logo{
-
+                    transform: translateX(-80px) translateY(-30px);
                 }
             }
         }   
@@ -602,6 +608,7 @@
     // padding:0 50%;
     .powerby
     {
+        // width: 100em;
         color:#d9caca;
         margin:auto 40%;
         // float:left;
