@@ -319,7 +319,7 @@
         margin-bottom:20px !important;
         padding:0;
         margin:0;
-        width:200px;
+        width:15em;
         background:#BEB5B5;
         border-radius:5px;
         height:20px;
@@ -464,6 +464,12 @@
                 }
             }
         }   
+    }
+
+    .highlight {
+        width: 90% !important;
+        margin-right: auto;
+        margin-left:auto; 
     }
 }
 
@@ -1184,9 +1190,9 @@
         width:100%;
     }
 
-    @include media-query($on-palm) {
-        width:$on-palm !important;
-    }
+    // @include media-query($on-palm) {
+    //     width:$on-palm !important;
+    // }
 }
 
 // lazy loading styling
