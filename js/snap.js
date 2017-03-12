@@ -204,25 +204,25 @@ $(window).resize(function(event) {
 		 	// }
 		 
 		 //correct start
-		  // $("figure.highlight .jspContainer").children('.jspHorizontalBar').remove();
+		  $("figure.highlight .jspContainer").children('.jspHorizontalBar').remove();
 
-		  // $("figure.highlight")
-				// .removeClass('jspScrollable')
-				// .css({
-				// 			overflow: "hidden",
-				// 			padding: "0px",
-				// 			width: "740px"			
-				// 		});
+		  $("figure.highlight")
+				.removeClass('jspScrollable')
+				.css({
+							overflow: "hidden",
+							padding: "0px",
+							width: "740px"			
+						});
 				
-				// $(".jspContainer").css(
-	   //  			"width", "740px"
-	   //  		);
+				$(".jspContainer").css(
+	    			"width", "740px"
+	    		);
 	    		
-	   //  		$(".jspContainer .jsPane").css({
-				// 	padding: "0px", 
-				// 	width: "740px",
-				// 	 left: "0px"
-	   //  		});
+	    		$(".jspContainer .jsPane").css({
+					padding: "0px", 
+					width: "740px",
+					 left: "0px"
+	    		});
 	   //  	correct end
 	   
 
