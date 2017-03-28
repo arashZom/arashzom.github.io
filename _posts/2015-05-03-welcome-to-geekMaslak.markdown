@@ -3,7 +3,9 @@ layout: post
 title:  "خوشامد گويي به وبلاگ شخصي گيك مسلك"
 date:   2015-05-03 01:03:55
 categories:  start
-pic: false
+imgUrl: "/images/pexels-php.png"
+img2: "/images/pexels-php.png"
+pic: true
 excerpt_separator: <!--more-->
 comments: true
 ---

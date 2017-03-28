@@ -4,17 +4,25 @@ layout: default
 
 <div class="home">
 
-  <h1 class="page-heading">عناوين</h1>
+  <!--<h1 class="page-heading">عناوين</h1>-->
 
   <ul class="post-list">
     {% for post in site.posts %}
       <li>
-        <span class="post-meta">{{ post.date | date: "%b %d, %Y" }}</span><br /><br />
-
+         <picture class="postpic">
+            <source data-srcset="{{ post.img2 }}" media="(min-width: 40em) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 40em) and (min-resolution: 144dpi)">
+            <source data-srcset="{{ post.img2 }}" media="(min-width: 40em)">
+            <source data-srcset="{{ post.img2 }}" media="(min-width: 30em) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 30em) and (min-resolution: 144dpi)">
+            <source data-srcset="{{ post.img2 }}" media="(min-width: 30em)">
+            <source data-srcset="{{ post.img2 }}" media="(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)">
+            <source data-srcset="{{ post.img2 }}">
+            <img src="{{ post.img2 }}" data-src="{{ post.img2 }}" alt="" class="lazyload" />
+          </picture>  
         <h2>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         </h2>
-          {{ post.exerpt }}
+        <span class="post-meta">{{ post.date | date: "%b %d, %Y" }}</span><br /><br />
+          {{ post.excerpt }}
       </li>
     {% endfor %}
   </ul>
