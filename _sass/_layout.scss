@@ -519,6 +519,28 @@
         box-shadow:1px 1px 15px 3px #a1a1a1;
         border-radius:5px;
         padding:5% 10%;
+        position: relative;
+        .postbutton{
+            background-color:transparent;
+            position: absolute;
+            display: block;
+            bottom: 2%;
+            left:5%;
+            font-family: $second-font-family;
+            font-size:1.2em;
+            padding: 10px;
+            border-radius: 5px;
+            border:1px solid #8D5454;
+            color:#8D5454;
+            font-weight: bold;
+            margin-top:20px;
+            // margin-right: 80%;
+            &:hover{
+                text-decoration: none;
+                background-color: #8D5454;
+                color:#E1E1E1;
+            }
+        }
     }
 
 }

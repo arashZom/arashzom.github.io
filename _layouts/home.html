@@ -22,7 +22,10 @@ layout: default
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         </h2>
         <span class="post-meta">{{ post.date | date: "%b %d, %Y" }}</span><br /><br />
-          {{ post.excerpt }}
+          <div style="display:block;margin-bottom:40px !important;word-wrap:break-word;">
+            {{ post.excerpt }}
+          </div>
+        <a href="{{ post.url | prepend: site.baseurl }}" class="postbutton">ادامه مطلب</a>
       </li>
     {% endfor %}
   </ul>
