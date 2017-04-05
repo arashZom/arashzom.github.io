@@ -14,9 +14,10 @@ $(function(){
 		// var scotchPanel;
 	// transformicons.add([]);	
 	// 
-	// 
+	// { parent: ".scotch-panel-canvas" }
 	
-
+	// $(".profile").stick_in_parent();
+	
   //    $(".jspDrag").on('mouseover', function(event) {
   //              	event.preventDefault();
   //              	/* Act on the event */
@@ -29,7 +30,7 @@ $(function(){
 	 //   });
      
      var scotchPanel = $('#panel').scotchPanel({
-		    containerSelector: 'body', // As a jQuery Selector
+		    containerSelector: '.page-content', // As a jQuery Selector
 		    direction: 'left', // Make it toggle in from the left
 		    duration: 300, // Speed in ms how fast you want it to be
 		    transition: 'ease', // CSS3 transition type: linear, ease, ease-in, ease-out, ease-in-out, cubic-bezier(P1x,P1y,P2x,P2y)
@@ -37,7 +38,37 @@ $(function(){
 		    distanceX: '40%', // Size fo the toggle
 		    enableEscapeKey: true // Clicking Esc will close the panel
 		});
+// ,recalc_every:3
+    // $(".page-content .profile").stick_in_parent();
+        $(".site-header").stick_in_parent({parent:"body",spacer:false,bottoming:true,recalc_every:1})
+         .on("sticky_kit:stick", function(e) {
+    			console.log("has stuck!", e.target);
+    			$(this).children('.wrapper').children('.site-title').css({
+    				lineHeight: "120px",
+    				marginTop: "-.5em"
+    			});
+    			// if(!matchMedia("only screen and (max-width: 480px)").matches){
+    			if($(window).width() >= 480){
+	    			$(this).children('.wrapper').children('.site-nav').css({
+	    				lineHeight: "120px",
+	    				marginTop: "-.5em"
+	    			});
+    				
+    			}	
+    		$(this).children('.wrapper').children('#mySvgWrapper').children("svg").css({width: "100px", height:"100px"});	
+    			// }
+ 		})
+  		.on("sticky_kit:unstick", function(e) {
+    			console.log("has unstuck!", e.target);
+    			// .style("transform","translate3d(0px, 0px, 0px)")
+    			// $(this).parent('.scotch-panel-canvas').css('transform', 'translate3d(0px, 0px, 0px)');;
+    			// $(this).addClass('.site-header');
+    			$(this).children('.wrapper').children('.site-title').removeAttr("style");
+    			$(this).children('.wrapper').children('.site-nav').removeAttr("style");
+    			$(this).children('.wrapper').children('#mySvgWrapper').children('svg').removeAttr("style");
+  		});
 
+	
 	var elm = Snap("#mySvgWrapper");
 	var g = elm.select("#layer1");
 
@@ -187,7 +218,17 @@ setInterval(function() {
 		}
 		// $(".profile svg").show();
 	}
+	
+	$(window).scroll(function(event) {
+		/* Act on the event */
+		if($(this).scrollTop() == 0){
+			$(".site-header").trigger('sticky_kit:unstick');
+		}
+	});
+
 },200);
+
+
 
 $(window).resize(function(event) {
 	/* Act on the event */
@@ -743,91 +784,91 @@ s.mouseout(function() {
 //---------------------scroll highjacking----------------------------------------
 
 
-$(window).scroll(function(event) {
-	// console.log("scroll top :"+$(this).scrollTop());
-	event.preventDefault();
-		// console.log("page content :"+$(".site-header").height()+$(".page-content").height());
-		// console.log("scroll:"+$(this).scrollTop());	
-		var scrollFromTop = $(this).scrollTop();
-		var heightOfPage = $(".site-header").height() + $(".page-content").height();
-		var height = $(".profile svg").outerHeight() + 20;		
-	/* Act on the event */	
-	//< $(".site-header").height() + $(".page-content").height()
-	if(scrollFromTop > 100 && scrollFromTop < heightOfPage){
-		 // $(".page-content .profile").attr('style','');
-		 // console.log("happend :"+$(".page-content .profile").marginTop+"page content:"+$(".site-header").height()+$(".page-content").height());
+// $(window).scroll(function(event) {
+// 	// console.log("scroll top :"+$(this).scrollTop());
+// 	event.preventDefault();
+// 		// console.log("page content :"+$(".site-header").height()+$(".page-content").height());
+// 		// console.log("scroll:"+$(this).scrollTop());	
+// 		var scrollFromTop = $(this).scrollTop();
+// 		var heightOfPage = $(".site-header").height() + $(".page-content").height();
+// 		var height = $(".profile svg").outerHeight() + 20;		
+// 	/* Act on the event */	
+// 	//< $(".site-header").height() + $(".page-content").height()
+// 	if(scrollFromTop > 100 && scrollFromTop < heightOfPage){
+// 		 // $(".page-content .profile").attr('style','');
+// 		 // console.log("happend :"+$(".page-content .profile").marginTop+"page content:"+$(".site-header").height()+$(".page-content").height());
         
-  		// $(".page-content .profile").attr('style', '');
-							  // 		$(".page-content .profile").css({
-									// 	position: 'fixed',
-									// 	top: '165px',
-									// 	left: '50px'
-									// });
-       // if()
-       	// $(".page-content .profile ").attr('style','');
-		$(".page-content .profile").css({
-			position: 'fixed',
-			top: '165px'
-		});
+//   		// $(".page-content .profile").attr('style', '');
+// 							  // 		$(".page-content .profile").css({
+// 									// 	position: 'fixed',
+// 									// 	top: '165px',
+// 									// 	left: '50px'
+// 									// });
+//        // if()
+//        	// $(".page-content .profile ").attr('style','');
+// 		$(".page-content .profile").css({
+// 			position: 'fixed',
+// 			top: '165px'
+// 		});
 
-		// .css(
-		// 	'position': 'fixed'
-		// 	// top: '165px'
-		// );
-	}
-	// else{
+// 		// .css(
+// 		// 	'position': 'fixed'
+// 		// 	// top: '165px'
+// 		// );
+// 	}
+// 	// else{
 
-		 // $(".page-content .profile").attr('style', '');
-  	// 	 $(".page-content .profile").css({
-  	// 	 	position: 'absolute',
-  	// 	 	top: '20px'
-  	// 	 });
-	// }
-	// if($(this).scrollTop() + height > $(".site-header").height() + $(".page-content").height())
-	// {
-		// $(".page-content .profile").css({
-		// 	position: 'absolute',
-		// 	top: '20px'
-		// 	// left:'45px'
-		// });
-         // $(".page-content .profile").addClass('AbsoluteIdcart');
-     //     $(".page-content .profile").attr('style', '');
-  		 // $(".page-content .profile").css({
-  		 // 	position: 'absolute',
-  		 // 	top: '20px'
-  		 // });
-	// }
-	if(scrollFromTop >= heightOfPage)
-	{
-		// console.log("something happend:" + scrollFromTop);
-		// $(".page-content .profile ").attr('style', '');
-		// $(".page-content .profile svg").attr('style', '');
-	// 	 $(".page-content .profile").attr('style','');
-		         $(".page-content .profile").css({
-		         	position: 'absolute',
-		         	top: '20px'
-		         });
-		 //        // $(".page-content .profile").removeClass('AbsoluteIdcart');
-	}
-	// if($(this).scrollTop() > 150 ){
-	// 	$(".site-header").css({
-	// 		position:'fixed',
-	// 		width: '100%',
-	// 		top: 0,
-	// 		// left:'50px',
-	// 		height:'80px'
-	// 	});
-	// }
-	// if($(this).scrollTop() <= 150 ){
-	// 	$(".site-header").css({
-	// 		position:'relative',
-	// 		// width: '100%',
-	// 		// top: 0,
-	// 		// left:'50px',
-	// 		height:'100px'
-	// 	});
-	// }
-});
+// 		 // $(".page-content .profile").attr('style', '');
+//   	// 	 $(".page-content .profile").css({
+//   	// 	 	position: 'absolute',
+//   	// 	 	top: '20px'
+//   	// 	 });
+// 	// }
+// 	// if($(this).scrollTop() + height > $(".site-header").height() + $(".page-content").height())
+// 	// {
+// 		// $(".page-content .profile").css({
+// 		// 	position: 'absolute',
+// 		// 	top: '20px'
+// 		// 	// left:'45px'
+// 		// });
+//          // $(".page-content .profile").addClass('AbsoluteIdcart');
+//      //     $(".page-content .profile").attr('style', '');
+//   		 // $(".page-content .profile").css({
+//   		 // 	position: 'absolute',
+//   		 // 	top: '20px'
+//   		 // });
+// 	// }
+// 	if(scrollFromTop >= heightOfPage)
+// 	{
+// 		// console.log("something happend:" + scrollFromTop);
+// 		// $(".page-content .profile ").attr('style', '');
+// 		// $(".page-content .profile svg").attr('style', '');
+// 	// 	 $(".page-content .profile").attr('style','');
+// 		         $(".page-content .profile").css({
+// 		         	position: 'absolute',
+// 		         	top: '20px'
+// 		         });
+// 		 //        // $(".page-content .profile").removeClass('AbsoluteIdcart');
+// 	}
+// 	// if($(this).scrollTop() > 150 ){
+// 	// 	$(".site-header").css({
+// 	// 		position:'fixed',
+// 	// 		width: '100%',
+// 	// 		top: 0,
+// 	// 		// left:'50px',
+// 	// 		height:'80px'
+// 	// 	});
+// 	// }
+// 	// if($(this).scrollTop() <= 150 ){
+// 	// 	$(".site-header").css({
+// 	// 		position:'relative',
+// 	// 		// width: '100%',
+// 	// 		// top: 0,
+// 	// 		// left:'50px',
+// 	// 		height:'100px'
+// 	// 	});
+// 	// }
+// });
 
 // if(window.location.href == "%http://localhost:4000/jekyll/update%"){
 // 	console.log("log for index pages");
