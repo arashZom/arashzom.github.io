@@ -56,8 +56,8 @@
       // @include  transform-origin(50%,50%);
      // transform:rotate(0deg);
      // -moz-transform:rotate(0deg);
-        transform-origin: 50% 50%;
-        -moz-transform-origin: 50% 50%;
+        // transform-origin: 50% 50%;
+        // -moz-transform-origin: 50% 50%;
         &:hover{
            // transform: rotate(360deg);
             // transition: transform 2s ease-out .5s;
@@ -74,8 +74,8 @@
       //  @include  transform-origin(50%,50%);
      // transform:rotate(0deg);
       //-moz-transform:rotate(0deg);
-      transform-origin: 50% 50%;
-      -moz-transform-origin: 50% 50%;
+      // transform-origin: 50% 50%;
+      // -moz-transform-origin: 50% 50%;
          // transition: transform .2s ease-out .5s;
         &:hover{
            // transform: rotate(-360deg);
@@ -93,8 +93,8 @@
      //  @include  transform-origin(50%,50%);
     // transform:rotate(0deg);
      //-moz-transform:rotate(0deg);
-     transform-origin: 50% 50%;
-     -moz-transform-origin: 50% 50%;
+     // transform-origin: 50% 50%;
+     // -moz-transform-origin: 50% 50%;
         // transition: transform .2s ease-out .5s;
         &:hover{
             // transform: rotate(360deg);
