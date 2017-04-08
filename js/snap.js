@@ -29,15 +29,7 @@ $(function(){
 	 //   	    $(this).addClass('jspActive');
 	 //   });
      
-     var scotchPanel = $('#panel').scotchPanel({
-		    containerSelector: '.page-content', // As a jQuery Selector
-		    direction: 'left', // Make it toggle in from the left
-		    duration: 300, // Speed in ms how fast you want it to be
-		    transition: 'ease', // CSS3 transition type: linear, ease, ease-in, ease-out, ease-in-out, cubic-bezier(P1x,P1y,P2x,P2y)
-		    // clickSelector: '.profile', // Enables toggling when clicking elements of this class
-		    distanceX: '40%', // Size fo the toggle
-		    enableEscapeKey: true // Clicking Esc will close the panel
-		});
+   
 // ,recalc_every:3
     // $(".page-content .profile").stick_in_parent();
         $(".site-header").stick_in_parent({parent:"body",spacer:false,bottoming:true,recalc_every:1})
@@ -65,7 +57,7 @@ $(function(){
     			// $(this).addClass('.site-header');
     			$(this).children('.wrapper').children('.site-title').removeAttr("style");
     			$(this).children('.wrapper').children('.site-nav').removeAttr("style");
-    			$(this).children('.wrapper').children('#mySvgWrapper').children('svg').removeAttr("style");
+    			$(this).children('.wrapper').children('#mySvgWrapper').children('svg').removeAttr('style');
   		});
 
 	
@@ -99,7 +91,17 @@ $(window).load(function() {
 if(matchMedia('only screen and (max-width: 480px)').matches){
      // scotchPanel.on();
      $(".profile").children('div').first().hide();
-     $(".site-header").trigger('sticky_kit:detach');
+     $(".site-header").trigger("sticky_kit:detach");
+
+       var scotchPanel = $('#panel').scotchPanel({
+		    containerSelector: 'body', // As a jQuery Selector .page-content
+		    direction: 'left', // Make it toggle in from the left
+		    duration: 300, // Speed in ms how fast you want it to be
+		    transition: 'ease', // CSS3 transition type: linear, ease, ease-in, ease-out, ease-in-out, cubic-bezier(P1x,P1y,P2x,P2y)
+		    // clickSelector: '.profile', // Enables toggling when clicking elements of this class
+		    distanceX: '40%', // Size fo the toggle
+		    enableEscapeKey: true // Clicking Esc will close the panel
+		});
 
 	 $(".profile").click(function(event) {
 			/* Act on the event */
@@ -135,15 +137,22 @@ if(matchMedia('only screen and (max-width: 480px)').matches){
 
 }else if(!matchMedia("only screen and (max-width: 480px)").matches){
 
-	 scotchPanel.off();
-
-	
+	 // scotchPanel.off();
+// ,offset_top:""
+	$(".profile").stick_in_parent({parent:"body",spacer:false,bottoming:false,recalc_every:1,offset_top:100})
+	.on("sticky_kit:stick",function(e) {
+		// $(this).css('top', '50px');
+	})
+	.on('sticky_kit:bottom', function(event) {
+		/* Act on the event */
+		// $(this).css({'position':'fixed','top': '250px !important'});
+	});
 //--------- click on the id cart icon--------------------------
 $(".profile").click(function(event) {
 	/* Act on the event */
 	event.preventDefault();
 	var box = $(this).children('div').first();
-	 scotchPanel.close();
+	 // scotchPanel.close();
    $(".profile svg").hide();
 	
 
@@ -183,7 +192,7 @@ $(".profile").click(function(event) {
 
 $(" .close").click(function(event) {
 
-		 scotchPanel.close();
+		 // scotchPanel.close();
 	
 	var box1 = $(".profile").children('div').first();
 	$(".profile").children("div.bio").hide();
@@ -207,7 +216,7 @@ setInterval(function() {
 	// console.log($(".profile").children('div').first());
 	// 
 		// console.log(document.querySelector('div.profile').childNodes[3].style);
-		 scotchPanel.close();
+		 // scotchPanel.close();
 		 // scotchPanel.off();
 		 // $(".close").hide();
 		 // $(".profile svg").show();
@@ -233,8 +242,9 @@ setInterval(function() {
 $(window).resize(function(event) {
 	/* Act on the event */
 	if($(window).width() >= 480){
+		window.location.reload(true);
 		if ($('.scotch-panel-canvas').hasClass('scotch-is-showing')) {
-			scotchPanel.close();
+			// scotchPanel.close();
 		 	$(".close").hide();
 		 	// if(!$(".profile svg").is(':visible')){
 
@@ -271,33 +281,45 @@ $(window).resize(function(event) {
 		 	// $(".close").hide();
 		 	// $(".profile svg").show();
 	}else{
-		$(".profile").children('div').first().css('display', 'none');
-		if($(".profile").children('div').first().hasClass('bio')){
-				$(".profile").children('div').first().removeClass('bio');
-				scotchPanel.open();
-			    $('#panel').children('.pro-pic').show();
-				$('#panel').children('.name').show();
-				$('#panel').children('.id').show();
-				$('#panel').children('.biography').show();
-				$('#panel').children('.share-buttons-bio').show();
-				$(".profile svg").hide('400', function() {
-					$(".close").attr('style', '');
-					$(".close").css({
-			      		"position":"static",
-			        	"margin-left":"-80px",
-			        	"margin-top":"10px",
-			        	"opacity":".5"
-			        }).fadeIn('1000');
-				});	
+		window.location.reload(true);
+		//   var scotchPanel = $('#panel').scotchPanel({
+		//     containerSelector: 'body', // As a jQuery Selector .page-content
+		//     direction: 'left', // Make it toggle in from the left
+		//     duration: 300, // Speed in ms how fast you want it to be
+		//     transition: 'ease', // CSS3 transition type: linear, ease, ease-in, ease-out, ease-in-out, cubic-bezier(P1x,P1y,P2x,P2y)
+		//     // clickSelector: '.profile', // Enables toggling when clicking elements of this class
+		//     distanceX: '40%', // Size fo the toggle
+		//     enableEscapeKey: true // Clicking Esc will close the panel
+		// });
 
-				 // if(!$(".close").is(':visible')){
-	    //    			$(".close").css({
-			  //     		"position":"static",
-			  //       	"margin-left":"-80px",
-			  //       	"margin-top":"10px",
-			  //       }).show();
-	    //          }
-		} 
+		//big correct section  
+		// $(".profile").children('div').first().css('display', 'none');
+		// if($(".profile").children('div').first().hasClass('bio')){
+		// 		$(".profile").children('div').first().removeClass('bio');
+		// 		scotchPanel.open();
+		// 	    $('#panel').children('.pro-pic').show();
+		// 		$('#panel').children('.name').show();
+		// 		$('#panel').children('.id').show();
+		// 		$('#panel').children('.biography').show();
+		// 		$('#panel').children('.share-buttons-bio').show();
+		// 		$(".profile svg").hide('400', function() {
+		// 			$(".close").attr('style', '');
+		// 			$(".close").css({
+		// 	      		"position":"static",
+		// 	        	"margin-left":"-80px",
+		// 	        	"margin-top":"10px",
+		// 	        	"opacity":".5"
+		// 	        }).fadeIn('1000');
+		// 		});	
+
+		// 		 // if(!$(".close").is(':visible')){
+	 //    //    			$(".close").css({
+		// 	  //     		"position":"static",
+		// 	  //       	"margin-left":"-80px",
+		// 	  //       	"margin-top":"10px",
+		// 	  //       }).show();
+	 //    //          }
+		// } end of big correct section
 
 		//correct start
 		// var winwidth = $(window).width() - 50 + 'px';
@@ -342,7 +364,7 @@ $(window).resize(function(event) {
   //-------------------------------- this is RESPONSIVE SECTION ---------------------------------------------
  if(matchMedia('only screen and (max-width: 480px)').matches){
      // scotchPanel.on();
-     
+     window.location.reload(true);
 	 //  scotchPanel = $('#panel').scotchPanel({
 		//     containerSelector: 'body', // As a jQuery Selector
 		//     direction: 'left', // Make it toggle in from the left
@@ -400,8 +422,8 @@ $(window).resize(function(event) {
 
 }else if(!matchMedia("only screen and (max-width: 480px)").matches){
 
-	 scotchPanel.off();
-
+	 // scotchPanel.off();
+	 window.location.reload(true);
 	 // $(".profile svg").attr('style', '');
 	 // $("#panel").remove();
 //--------- click on the id cart icon--------------------------
@@ -409,7 +431,7 @@ $(".profile").click(function(event) {
 	/* Act on the event */
 	event.preventDefault();
 	var box = $(this).children('div').first();
-	 scotchPanel.close();
+	 // scotchPanel.close();
    $(".profile svg").hide();
 	// if(jPM.getMenu())
        // {
@@ -544,7 +566,7 @@ $(".profile").click(function(event) {
 
 $(".close").click(function(event) {
 
-		 scotchPanel.close();
+		 // scotchPanel.close();
 	/* Act on the event */
 	// event.preventDefault();
 	//rwd mode
