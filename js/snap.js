@@ -242,7 +242,7 @@ setInterval(function() {
 $(window).resize(function(event) {
 	/* Act on the event */
 	if($(window).width() >= 480){
-		window.location.reload(true);
+		document.location.href = document.location.href;
 		if ($('.scotch-panel-canvas').hasClass('scotch-is-showing')) {
 			// scotchPanel.close();
 		 	$(".close").hide();
@@ -281,7 +281,7 @@ $(window).resize(function(event) {
 		 	// $(".close").hide();
 		 	// $(".profile svg").show();
 	}else{
-		window.location.reload(true);
+		document.location.href = document.location.href;
 		//   var scotchPanel = $('#panel').scotchPanel({
 		//     containerSelector: 'body', // As a jQuery Selector .page-content
 		//     direction: 'left', // Make it toggle in from the left
@@ -364,7 +364,7 @@ $(window).resize(function(event) {
   //-------------------------------- this is RESPONSIVE SECTION ---------------------------------------------
  if(matchMedia('only screen and (max-width: 480px)').matches){
      // scotchPanel.on();
-     window.location.reload(true);
+     document.location.href = document.location.href;
 	 //  scotchPanel = $('#panel').scotchPanel({
 		//     containerSelector: 'body', // As a jQuery Selector
 		//     direction: 'left', // Make it toggle in from the left
@@ -423,7 +423,7 @@ $(window).resize(function(event) {
 }else if(!matchMedia("only screen and (max-width: 480px)").matches){
 
 	 // scotchPanel.off();
-	 window.location.reload(true);
+	 document.location.href = document.location.href;
 	 // $(".profile svg").attr('style', '');
 	 // $("#panel").remove();
 //--------- click on the id cart icon--------------------------
