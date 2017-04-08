@@ -525,6 +525,10 @@
     font-family:$second-font-family;
 }
 
+.post{
+    margin-top:5% !important;
+}
+
 .post-list {
     margin-left: 0;
     list-style: none;
@@ -900,7 +904,7 @@
     margin-right:85%;
     // margin_top:165px;
     position:absolute;
-    top:20px;
+    top:40px;
     // left:50px;
     // z-index:1000px;
     svg {

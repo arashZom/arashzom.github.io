@@ -99,9 +99,9 @@ $(window).load(function() {
 if(matchMedia('only screen and (max-width: 480px)').matches){
      // scotchPanel.on();
      $(".profile").children('div').first().hide();
-	
+     $(".site-header").trigger('sticky_kit:detach');
 
-	$(".profile").click(function(event) {
+	 $(".profile").click(function(event) {
 			/* Act on the event */
 		scotchPanel.open();
 		$('#panel').children('.pro-pic').show();
