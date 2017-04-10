@@ -60,7 +60,7 @@ $(function(){
     			$(this).children('.wrapper').children('#mySvgWrapper').children('svg').removeAttr('style');
   		});
 
-	
+	var doneTheStuff = false;
 	var elm = Snap("#mySvgWrapper");
 	var g = elm.select("#layer1");
 
@@ -242,7 +242,10 @@ setInterval(function() {
 $(window).resize(function(event) {
 	/* Act on the event */
 	if($(window).width() >= 480){
-		document.location.href = document.location.href;
+		if (!doneTheStuff) {
+			doneTheStuff = true;
+			document.location.href = document.location.href;
+		}
 		if ($('.scotch-panel-canvas').hasClass('scotch-is-showing')) {
 			// scotchPanel.close();
 		 	$(".close").hide();
@@ -281,8 +284,10 @@ $(window).resize(function(event) {
 		 	// $(".close").hide();
 		 	// $(".profile svg").show();
 	}else{
-		document.location.href = document.location.href;
-		//   var scotchPanel = $('#panel').scotchPanel({
+		if (!doneTheStuff) {
+			doneTheStuff = true;
+			document.location.href = document.location.href;
+		}		//   var scotchPanel = $('#panel').scotchPanel({
 		//     containerSelector: 'body', // As a jQuery Selector .page-content
 		//     direction: 'left', // Make it toggle in from the left
 		//     duration: 300, // Speed in ms how fast you want it to be
@@ -364,8 +369,10 @@ $(window).resize(function(event) {
   //-------------------------------- this is RESPONSIVE SECTION ---------------------------------------------
  if(matchMedia('only screen and (max-width: 480px)').matches){
      // scotchPanel.on();
-     document.location.href = document.location.href;
-	 //  scotchPanel = $('#panel').scotchPanel({
+		if (!doneTheStuff) {
+			doneTheStuff = true;
+			document.location.href = document.location.href;
+		}	 //  scotchPanel = $('#panel').scotchPanel({
 		//     containerSelector: 'body', // As a jQuery Selector
 		//     direction: 'left', // Make it toggle in from the left
 		//     duration: 300, // Speed in ms how fast you want it to be
@@ -423,8 +430,10 @@ $(window).resize(function(event) {
 }else if(!matchMedia("only screen and (max-width: 480px)").matches){
 
 	 // scotchPanel.off();
-	 document.location.href = document.location.href;
-	 // $(".profile svg").attr('style', '');
+		if (!doneTheStuff) {
+			doneTheStuff = true;
+			document.location.href = document.location.href;
+		}	 // $(".profile svg").attr('style', '');
 	 // $("#panel").remove();
 //--------- click on the id cart icon--------------------------
 $(".profile").click(function(event) {
@@ -694,17 +703,25 @@ if($.browser.webkit){
 	// transform-origin: 75px 185px !important => #svg2 #layer1 .three
 	//  transform-origin: 65px 235px 0 !important => #svg2 #layer1 .two
 	//  transform-origin: 150px 305px 0 !important => #svg2 #layer1 .one
-    var paths = $("#svg2 g#layer1").children('path');
-	console.log(paths);
-	// paths[0].css('transform-origin','150px 305px 0 !important');
-	// paths[1].css('transform-origin', '65px 235px 0 !important');
-	// paths[2].css('transform-origin', '75px 185px !important');
+    
+    // var paths = $("#svg2 g#layer1").children('path');
+	// console.log(paths);
+	// console.log($("path#path4186"));
+	// paths[0].style.transformOrigin='150px 305px 0 !important';
+	$("path#path4186").css('transformOrigin', '150px 305px 0 !important');
+	$("path#path4201").css('transformOrigin', '65px 235px 0 !important');
+	$("path#path4208").css('transformOrigin', '150px 305px 0 !important');
+	// paths[1].css('transformOrigin', '65px 235px 0 !important');
+	// paths[2].css('transformOrigin', '75px 185px !important');
+	
+	// paths[0].style.transformOrigin = "150px 305px 0 !important";
+	// one
 
     one.animate({ transform:"r360,"+ oneBb1x +","+ oneBb1y+"s1.02,1.02,"+oneBb1x+","+oneBb1y,strokeWidth:7},
  			2000);
- 		two.animate({ transform:"r-360,"+ twoBb1x +","+ twoBb1y+"s1.02,1.02,"+twoBb1x+","+twoBb1y,strokeWidth:7},
+ 	two.animate({ transform:"r-360,"+ twoBb1x +","+ twoBb1y+"s1.02,1.02,"+twoBb1x+","+twoBb1y,strokeWidth:7},
  			2000);
- 		three.animate({ transform:"r360,"+ threeBb1x +","+ threeBb1y+"s1.02,1.02,"+threeBb1x+","+threeBb1y,strokeWidth:7},
+ 	three.animate({ transform:"r360,"+ threeBb1x +","+ threeBb1y+"s1.02,1.02,"+threeBb1x+","+threeBb1y,strokeWidth:7},
  			2000);
 // //  start of the fallback or polyfill
 // //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
