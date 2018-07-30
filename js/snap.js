@@ -228,12 +228,12 @@ setInterval(function() {
 		// $(".profile svg").show();
 	}
 	
-	// $(window).scroll(function(event) {
-	// 	/* Act on the event */
-	// 	if($(this).scrollTop() == 0){
-	// 		$(".site-header").trigger('sticky_kit:unstick');
-	// 	}
-	// });
+	$(window).scroll(function(event) {
+		/* Act on the event */
+		if($(this).scrollTop() == 0){
+			$(".site-header").trigger('sticky_kit:unstick');
+		}
+	});
 
 },200);
 
@@ -370,12 +370,16 @@ $(window).resize(function(event) {
 	    // }
 	}
 
-  //-------------------------------- this is RESPONSIVE SECTION ---------------------------------------------
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  //-------------------------------- this is RESPONSIVE SECTION --------------------------------------------- //
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+let doneTheStuff3 = false;
+let doneTheStuff4= false;
  if(matchMedia('only screen and (max-width: 480px)').matches){
      // scotchPanel.on();
-     let doneTheStuff = false;
-		if (!doneTheStuff) {
-			doneTheStuff = true;
+     
+		if (!doneTheStuff3) {
+			doneTheStuff3 = true;
 			document.location.href = document.location.href;
 		}	 //  scotchPanel = $('#panel').scotchPanel({
 		//     containerSelector: 'body', // As a jQuery Selector
@@ -435,9 +439,9 @@ $(window).resize(function(event) {
 }else if(!matchMedia("only screen and (max-width: 480px)").matches){
 
 	 // scotchPanel.off();
-	 	let doneTheStuff = false;
-		if (!doneTheStuff) {
-			doneTheStuff = true;
+	 	// let doneTheStuff = false;
+		if (!doneTheStuff4) {
+			doneTheStuff4 = true;
 			document.location.href = document.location.href;
 		}	 // $(".profile svg").attr('style', '');
 	 // $("#panel").remove();
