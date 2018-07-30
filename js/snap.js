@@ -60,7 +60,7 @@ $(function(){
     			$(this).children('.wrapper').children('#mySvgWrapper').children('svg').removeAttr('style');
   		});
 
-	var doneTheStuff = false;
+	
 	var elm = Snap("#mySvgWrapper");
 	var g = elm.select("#layer1");
 
@@ -242,6 +242,7 @@ setInterval(function() {
 $(window).resize(function(event) {
 	/* Act on the event */
 	if($(window).width() >= 480){
+		let doneTheStuff = false;
 		if (!doneTheStuff) {
 			doneTheStuff = true;
 			document.location.href = document.location.href;
@@ -284,6 +285,7 @@ $(window).resize(function(event) {
 		 	// $(".close").hide();
 		 	// $(".profile svg").show();
 	}else{
+			let doneTheStuff = false;
 		if (!doneTheStuff) {
 			doneTheStuff = true;
 			document.location.href = document.location.href;
@@ -369,6 +371,7 @@ $(window).resize(function(event) {
   //-------------------------------- this is RESPONSIVE SECTION ---------------------------------------------
  if(matchMedia('only screen and (max-width: 480px)').matches){
      // scotchPanel.on();
+     let doneTheStuff = false;
 		if (!doneTheStuff) {
 			doneTheStuff = true;
 			document.location.href = document.location.href;
@@ -430,6 +433,7 @@ $(window).resize(function(event) {
 }else if(!matchMedia("only screen and (max-width: 480px)").matches){
 
 	 // scotchPanel.off();
+	 	let doneTheStuff = false;
 		if (!doneTheStuff) {
 			doneTheStuff = true;
 			document.location.href = document.location.href;

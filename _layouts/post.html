@@ -57,6 +57,15 @@ comments: true
     var disqus_shortname = 'ooarashoo';
     var disqus_developer = 1;
     
+
+    var disqus_config = function () {
+        // this.page.url = 'a unique URL for each page where Disqus is present';
+        // this.page.identifier = 'a unique identifier for each page where Disqus is present';
+        this.page.url = window.location.href;
+        this.page.title = $('title').text();
+        this.language = 'fa';
+    };
+
     /* * * DON'T EDIT BELOW THIS LINE * * */
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
