@@ -241,8 +241,10 @@ setInterval(function() {
 
 $(window).resize(function(event) {
 	/* Act on the event */
+	let doneTheStuff = false;
+	let doneTheStuff2 = false;
 	if($(window).width() >= 480){
-		let doneTheStuff = false;
+		
 		if (!doneTheStuff) {
 			doneTheStuff = true;
 			document.location.href = document.location.href;
@@ -285,9 +287,9 @@ $(window).resize(function(event) {
 		 	// $(".close").hide();
 		 	// $(".profile svg").show();
 	}else{
-			let doneTheStuff = false;
-		if (!doneTheStuff) {
-			doneTheStuff = true;
+			// let doneTheStuff = false;
+		if (!doneTheStuff2) {
+			doneTheStuff2 = true;
 			document.location.href = document.location.href;
 		}		//   var scotchPanel = $('#panel').scotchPanel({
 		//     containerSelector: 'body', // As a jQuery Selector .page-content
