@@ -228,12 +228,12 @@ setInterval(function() {
 		// $(".profile svg").show();
 	}
 	
-	$(window).scroll(function(event) {
-		/* Act on the event */
-		if($(this).scrollTop() == 0){
-			$(".site-header").trigger('sticky_kit:unstick');
-		}
-	});
+	// $(window).scroll(function(event) {
+	// 	/* Act on the event */
+	// 	if($(this).scrollTop() == 0){
+	// 		$(".site-header").trigger('sticky_kit:unstick');
+	// 	}
+	// });
 
 },200);
 
