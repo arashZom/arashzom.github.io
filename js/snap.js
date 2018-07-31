@@ -238,8 +238,8 @@ setInterval(function() {
 },200);
 
 
-let doneTheStuff3 = false;
-let doneTheStuff4= false;
+// let doneTheStuff3 = false;
+// let doneTheStuff4= false;
 let doneTheStuff2 = false;
 let doneTheStuff = false;
 $(window).resize(function(event) {
@@ -379,10 +379,12 @@ $(window).resize(function(event) {
  if(matchMedia('only screen and (max-width: 480px)').matches){
      // scotchPanel.on();
      
-		if (!doneTheStuff3) {
-			doneTheStuff3 = true;
-			document.location.href = document.location.href;
-		}	 //  scotchPanel = $('#panel').scotchPanel({
+		// if (!doneTheStuff3) {
+		// 	doneTheStuff3 = true;
+		// 	document.location.href = document.location.href;
+		// }	 
+
+		//  scotchPanel = $('#panel').scotchPanel({
 		//     containerSelector: 'body', // As a jQuery Selector
 		//     direction: 'left', // Make it toggle in from the left
 		//     duration: 300, // Speed in ms how fast you want it to be
@@ -441,10 +443,11 @@ $(window).resize(function(event) {
 
 	 // scotchPanel.off();
 	 	// let doneTheStuff = false;
-		if (!doneTheStuff4) {
-			doneTheStuff4 = true;
-			document.location.href = document.location.href;
-		}	 // $(".profile svg").attr('style', '');
+		// if (!doneTheStuff4) {
+		// 	doneTheStuff4 = true;
+		// 	document.location.href = document.location.href;
+		// }
+			 // $(".profile svg").attr('style', '');
 	 // $("#panel").remove();
 //--------- click on the id cart icon--------------------------
 $(".profile").click(function(event) {
