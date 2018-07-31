@@ -238,11 +238,13 @@ setInterval(function() {
 },200);
 
 
-
+let doneTheStuff3 = false;
+let doneTheStuff4= false;
+let doneTheStuff2 = false;
+let doneTheStuff = false;
 $(window).resize(function(event) {
 	/* Act on the event */
-	let doneTheStuff = false;
-	let doneTheStuff2 = false;
+	
 	if($(window).width() >= 480){
 		
 		if (!doneTheStuff) {
@@ -373,8 +375,7 @@ $(window).resize(function(event) {
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////
   //-------------------------------- this is RESPONSIVE SECTION --------------------------------------------- //
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////
-let doneTheStuff3 = false;
-let doneTheStuff4= false;
+
  if(matchMedia('only screen and (max-width: 480px)').matches){
      // scotchPanel.on();
      
