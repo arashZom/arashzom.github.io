@@ -288,12 +288,118 @@ $(window).resize(function(event) {
 			 // scotchPanel.off();
 		 	// $(".close").hide();
 		 	// $(".profile svg").show();
+		 	
+			 ///////////////////////////////////////////////////////
+		 	//////   start of matchmadia section  ////////////// //
+			 ///////////////////////////////////////////////////////
+			 $(".profile").click(function(event) {
+	/* Act on the event */
+	event.preventDefault();
+	var box = $(this).children('div').first();
+	 // scotchPanel.close();
+   $(".profile svg").hide();
+	
+
+	//for desktop version
+	if(!box.hasClass('bio')){	
+	  box.addClass('bio');
+	  // $elem = $(this).children('.bio');
+	  if(box.hide())
+	  {
+	  	box.show();
+	  }
+		
+				box.children('.pro-pic').velocity("transition.fadeIn",{duration:1000,delay:250});
+				box.children('.name').velocity("transition.slideRightIn",{duration:1000,delay:1000});
+				box.children('.id').velocity("transition.slideLeftIn",{duration:1000,delay:500});
+				box.children('.biography').velocity("transition.shrinkIn",{duration:1000,delay:2000});
+				box.children('.share-buttons-bio').velocity("transition.slideUpIn",{duration:2000,delay:2500,complete:function() {
+					
+        	$(".close").css({
+        		"position":"relative",
+        		// "top":"5px",
+        		"left":"175px",
+        		"margin-left":"0",
+        		"opacity":".5"
+        	}).show('500');
+
+				}});
+				
+				
+	}
+
+// } else if rwd
+
+		// $(".close svg").fadeIn(1000);
+	
+});
+
+
+
+$(".close").click(function(event) {
+
+	
+	var box1 = $(".profile").children('div').first();
+	$(".profile").children("div.bio").hide();
+	// $(".close").hide();
+	$(this).fadeOut('400', function() {
+		box1.removeClass('bio');
+		$(".profile svg").fadeIn('500');
+	});
+  // } rwd mode
+
+});
+//end of matchmedia section
 	}else{
 			// let doneTheStuff = false;
 		if (!doneTheStuff2) {
 			doneTheStuff2 = true;
 			document.location.href = document.location.href;
 		}		
+
+
+$(".profile").click(function(event) {
+			/* Act on the event */
+		scotchPanel.open();
+		$('#panel').children('.pro-pic').show();
+		$('#panel').children('.name').show();
+		$('#panel').children('.id').show();
+		$('#panel').children('.biography').show();
+		$('#panel').children('.share-buttons-bio').show();
+		$(".profile svg").hide('400', function() {
+			$(".close").attr('style', '');
+			$(".close").css({
+	      		"position":"static",
+	        	"margin-left":"-80px",
+	        	"margin-top":"10px",
+	        	"opacity":".5"
+	        }).fadeIn('1000');
+		});
+
+      // $(".close").css({
+      //   	marginTop: '10px',
+      //   	marginLeft:'-65px'
+      //   });
+		
+	});
+
+       // $(".profile svg").css({
+       // 	marginLeft: '-25px',
+       // 	property2: '-10px'
+       // });
+
+		$(".close").click(function(event) {
+			/* Act on the event */
+			    event.preventDefault();
+				$(this).fadeOut('400', function() {
+					// $(this).hide();
+					$(".close").attr('style', '');
+					scotchPanel.close();
+					// $(".profile").fadeIn();			
+					$(".profile svg").fadeIn();
+	              });
+		});
+
 
 		//   var scotchPanel = $('#panel').scotchPanel({
 		//     containerSelector: 'body', // As a jQuery Selector .page-content
@@ -396,49 +502,50 @@ $(window).resize(function(event) {
 		//     enableEscapeKey: true // Clicking Esc will close the panel
 		// });
 
-	$(".profile").click(function(event) {
-			/* Act on the event */
-		scotchPanel.open();
-		$('#panel').children('.pro-pic').show();
-		$('#panel').children('.name').show();
-		$('#panel').children('.id').show();
-		$('#panel').children('.biography').show();
-		$('#panel').children('.share-buttons-bio').show();
-		$(".profile svg").hide('400', function() {
-			$(".close").attr('style', '');
-			$(".close").css({
-	      		"position":"static",
-	        	"margin-left":"-80px",
-	        	"margin-top":"10px",
-	        	"opacity":".5"
-	        }).fadeIn('1000');
-		});
+//start of cut ..............................
+	// $(".profile").click(function(event) {
+	// 		/* Act on the event */
+	// 	scotchPanel.open();
+	// 	$('#panel').children('.pro-pic').show();
+	// 	$('#panel').children('.name').show();
+	// 	$('#panel').children('.id').show();
+	// 	$('#panel').children('.biography').show();
+	// 	$('#panel').children('.share-buttons-bio').show();
+	// 	$(".profile svg").hide('400', function() {
+	// 		$(".close").attr('style', '');
+	// 		$(".close").css({
+	//       		"position":"static",
+	//         	"margin-left":"-80px",
+	//         	"margin-top":"10px",
+	//         	"opacity":".5"
+	//         }).fadeIn('1000');
+	// 	});
 
-      // $(".close").css({
-      //   	marginTop: '10px',
-      //   	marginLeft:'-65px'
-      //   });
+ //      // $(".close").css({
+ //      //   	marginTop: '10px',
+ //      //   	marginLeft:'-65px'
+ //      //   });
 		
-	});
+	// });
 
-       // $(".profile svg").css({
-       // 	marginLeft: '-25px',
-       // 	property2: '-10px'
-       // });
+ //       // $(".profile svg").css({
+ //       // 	marginLeft: '-25px',
+ //       // 	property2: '-10px'
+ //       // });
 
-		$(".close").click(function(event) {
-			/* Act on the event */
-			    event.preventDefault();
-				$(this).fadeOut('400', function() {
-					// $(this).hide();
-					$(".close").attr('style', '');
-					scotchPanel.close();
-					// $(".profile").fadeIn();			
-					$(".profile svg").fadeIn();
-	              });
-		});
+	// 	$(".close").click(function(event) {
+	// 		/* Act on the event */
+	// 		    event.preventDefault();
+	// 			$(this).fadeOut('400', function() {
+	// 				// $(this).hide();
+	// 				$(".close").attr('style', '');
+	// 				scotchPanel.close();
+	// 				// $(".profile").fadeIn();			
+	// 				$(".profile svg").fadeIn();
+	//               });
+	// 	});
 
-
+//end of cut .....................................................
 		// $(".close").attr('style', '');
 
 }else if(!matchMedia("only screen and (max-width: 480px)").matches){
@@ -452,178 +559,178 @@ $(window).resize(function(event) {
 			 // $(".profile svg").attr('style', '');
 	 // $("#panel").remove();
 //--------- click on the id cart icon--------------------------
-$(".profile").click(function(event) {
-	/* Act on the event */
-	event.preventDefault();
-	var box = $(this).children('div').first();
-	 // scotchPanel.close();
-   $(".profile svg").hide();
-	// if(jPM.getMenu())
-       // {
-       	  // console.log(jPM.getMenu());
-       	  // jPM.menu.remove();
-       		// $("#jPanelMenu-menu").remove();
-       // }
-	//left pannel 
+// $(".profile").click(function(event) {
+// 	/* Act on the event */
+// 	event.preventDefault();
+// 	var box = $(this).children('div').first();
+// 	 // scotchPanel.close();
+//    $(".profile svg").hide();
+// 	// if(jPM.getMenu())
+//        // {
+//        	  // console.log(jPM.getMenu());
+//        	  // jPM.menu.remove();
+//        		// $("#jPanelMenu-menu").remove();
+//        // }
+// 	//left pannel 
 	
-  // smartphone/iphone... maybe run some small-screen related dom scripting?
+//   // smartphone/iphone... maybe run some small-screen related dom scripting?
 
        
-       // $(".profile svg").wrap('<a href="#menu" class="menu-link"></a>');
-        // $(".profile .close").wrap('<a href="#menu2" class="menu-link2"></a>');
-  //        scotchPanel = $('#panel').scotchPanel({
-		//     containerSelector: 'body', // As a jQuery Selector
-		//     direction: 'left', // Make it toggle in from the left
-		//     duration: 300, // Speed in ms how fast you want it to be
-		//     transition: 'ease', // CSS3 transition type: linear, ease, ease-in, ease-out, ease-in-out, cubic-bezier(P1x,P1y,P2x,P2y)
-		//     clickSelector: '.profile', // Enables toggling when clicking elements of this class
-		//     distanceX: '70%', // Size fo the toggle
-		//     enableEscapeKey: true // Clicking Esc will close the panel
-		// });
+//        // $(".profile svg").wrap('<a href="#menu" class="menu-link"></a>');
+//         // $(".profile .close").wrap('<a href="#menu2" class="menu-link2"></a>');
+//   //        scotchPanel = $('#panel').scotchPanel({
+// 		//     containerSelector: 'body', // As a jQuery Selector
+// 		//     direction: 'left', // Make it toggle in from the left
+// 		//     duration: 300, // Speed in ms how fast you want it to be
+// 		//     transition: 'ease', // CSS3 transition type: linear, ease, ease-in, ease-out, ease-in-out, cubic-bezier(P1x,P1y,P2x,P2y)
+// 		//     clickSelector: '.profile', // Enables toggling when clicking elements of this class
+// 		//     distanceX: '70%', // Size fo the toggle
+// 		//     enableEscapeKey: true // Clicking Esc will close the panel
+// 		// });
 		
-//rwd mode
-      //  scotchPanel.open();
+// //rwd mode
+//       //  scotchPanel.open();
 
-       // {
-   // 	 menu: box,
-   // 	 trigger: '.profile svg'
-			// }
-       // box.addClass('bio');
-       // jPM.menu = box;
+//        // {
+//    // 	 menu: box,
+//    // 	 trigger: '.profile svg'
+// 			// }
+//        // box.addClass('bio');
+//        // jPM.menu = box;
       
-       //	jPM.on();
-        // }
-      // jPM.trigger(true);
+//        //	jPM.on();
+//         // }
+//       // jPM.trigger(true);
  
 
-///what should happen in rwd mode
-  //       $('#panel').children('.pro-pic').show();
-		// $('#panel').children('.name').show();
-		// $('#panel').children('.id').show();
-		// $('#panel').children('.biography').show();
-  //     $(".close").css({
-  //       	marginTop: '20px',
-  //       	marginLeft:'-15px'
-  //       });
+// ///what should happen in rwd mode
+//   //       $('#panel').children('.pro-pic').show();
+// 		// $('#panel').children('.name').show();
+// 		// $('#panel').children('.id').show();
+// 		// $('#panel').children('.biography').show();
+//   //     $(".close").css({
+//   //       	marginTop: '20px',
+//   //       	marginLeft:'-15px'
+//   //       });
       
 
-	// box.attr({
-	// 	class: '',
-	// 	id: ''
-	// });
-    // if(scotchPanel){
-    // 		scotchPanel.remove();
-    // }
-    // scotchPanel.close();
- // if(!matchMedia('only screen and (max-width: 480px)').matches)
-	// jPM.remove();
-    // box1= $(this).children('div').first();
-	// if(box.attr("id")){
-		// box.removeAttr('id');
+// 	// box.attr({
+// 	// 	class: '',
+// 	// 	id: ''
+// 	// });
+//     // if(scotchPanel){
+//     // 		scotchPanel.remove();
+//     // }
+//     // scotchPanel.close();
+//  // if(!matchMedia('only screen and (max-width: 480px)').matches)
+// 	// jPM.remove();
+//     // box1= $(this).children('div').first();
+// 	// if(box.attr("id")){
+// 		// box.removeAttr('id');
         
-        // hide and show of biocart
-        // $(".profile svg").hide('200', function() {
-        // 	$(".close").show('4000');
+//         // hide and show of biocart
+//         // $(".profile svg").hide('200', function() {
+//         // 	$(".close").show('4000');
 
-        // });
+//         // });
 		
 
-		// if(jPM.on){		
-		// }
-		// bigSlide.close();
+// 		// if(jPM.on){		
+// 		// }
+// 		// bigSlide.close();
 
 
-	//for desktop version
-	if(!box.hasClass('bio')){	
-	  box.addClass('bio');
-	  // $elem = $(this).children('.bio');
-	  if(box.hide())
-	  {
-	  	box.show();
-	  }
-			// $elem.append('');
-			// $elem.append('<img class="pro-pic" src="images/arashtext.jpg" />')
-			// $elem.append('<h4 class="name">آرش اورنگ پور</h4>');
-			// $elem.append('<span class="id">طراح وب و تجربه كاربري</span>');
-			// $elem.append('<p class="biography"></p>');
-   //          $elem.children('.biography').text("شخصي هستم دوست دار تجربه كاربري و علاقه مند به طراحي رابط كاربري");
-      // $elem.load("file://C:/Users/Dell/ooarashoo/bio.html",function(response,status,xhr){
-      //  	   if(status == "error")
-      //  	   {
-      //  	   	console.log(xhr.status+" "+xhr.statusText);
-      //  	   }
-      //  	   $(this).append(response);
-      //  	   console.log(response);
-      //  	   console.log("file complete");
-      //  });
-			// $elem.append('<div>{% include bio.html %}</div>');
+// 	//for desktop version
+// 	if(!box.hasClass('bio')){	
+// 	  box.addClass('bio');
+// 	  // $elem = $(this).children('.bio');
+// 	  if(box.hide())
+// 	  {
+// 	  	box.show();
+// 	  }
+// 			// $elem.append('');
+// 			// $elem.append('<img class="pro-pic" src="images/arashtext.jpg" />')
+// 			// $elem.append('<h4 class="name">آرش اورنگ پور</h4>');
+// 			// $elem.append('<span class="id">طراح وب و تجربه كاربري</span>');
+// 			// $elem.append('<p class="biography"></p>');
+//    //          $elem.children('.biography').text("شخصي هستم دوست دار تجربه كاربري و علاقه مند به طراحي رابط كاربري");
+//       // $elem.load("file://C:/Users/Dell/ooarashoo/bio.html",function(response,status,xhr){
+//       //  	   if(status == "error")
+//       //  	   {
+//       //  	   	console.log(xhr.status+" "+xhr.statusText);
+//       //  	   }
+//       //  	   $(this).append(response);
+//       //  	   console.log(response);
+//       //  	   console.log("file complete");
+//       //  });
+// 			// $elem.append('<div>{% include bio.html %}</div>');
      
-				box.children('.pro-pic').velocity("transition.fadeIn",{duration:1000,delay:250});
-				box.children('.name').velocity("transition.slideRightIn",{duration:1000,delay:1000});
-				box.children('.id').velocity("transition.slideLeftIn",{duration:1000,delay:500});
-				box.children('.biography').velocity("transition.shrinkIn",{duration:1000,delay:2000});
-				box.children('.share-buttons-bio').velocity("transition.slideUpIn",{duration:2000,delay:2500,complete:function() {
+// 				box.children('.pro-pic').velocity("transition.fadeIn",{duration:1000,delay:250});
+// 				box.children('.name').velocity("transition.slideRightIn",{duration:1000,delay:1000});
+// 				box.children('.id').velocity("transition.slideLeftIn",{duration:1000,delay:500});
+// 				box.children('.biography').velocity("transition.shrinkIn",{duration:1000,delay:2000});
+// 				box.children('.share-buttons-bio').velocity("transition.slideUpIn",{duration:2000,delay:2500,complete:function() {
 					
-        	$(".close").css({
-        		"position":"relative",
-        		// "top":"5px",
-        		"left":"175px",
-        		"margin-left":"0",
-        		"opacity":".5"
-        	}).show('500');
+//         	$(".close").css({
+//         		"position":"relative",
+//         		// "top":"5px",
+//         		"left":"175px",
+//         		"margin-left":"0",
+//         		"opacity":".5"
+//         	}).show('500');
 
-				}});
-				// $(".close").css('marginTop', '-400px');
-				// $(".close").css({
-    //     				marginTop: '-380'
-    //             });
-					// $(".close").attr('style', '');
+// 				}});
+// 				// $(".close").css('marginTop', '-400px');
+// 				// $(".close").css({
+//     //     				marginTop: '-380'
+//     //             });
+// 					// $(".close").attr('style', '');
 				
-	}
+// 	}
 
-// } else if rwd
+// // } else if rwd
 
-		// $(".close svg").fadeIn(1000);
+// 		// $(".close svg").fadeIn(1000);
 	
-});
+// });
 
 
 
-$(".close").click(function(event) {
+// $(".close").click(function(event) {
 
-		 // scotchPanel.close();
-	/* Act on the event */
-	// event.preventDefault();
-	//rwd mode
-	// if(matchMedia('only screen and (max-width: 480px)').matches){
-        // scotchPanel.remove();
-  //       $('#panel').children('.pro-pic').hide();
-		// $('#panel').children('.name').hide();
-		// $('#panel').children('.id').hide();
-		// $('#panel').children('.biography').hide();
-	// rwd mode
-		// if ($('.scotch-panel-canvas').hasClass('scotch-is-showing')) {
+// 		 // scotchPanel.close();
+// 	/* Act on the event */
+// 	// event.preventDefault();
+// 	//rwd mode
+// 	// if(matchMedia('only screen and (max-width: 480px)').matches){
+//         // scotchPanel.remove();
+//   //       $('#panel').children('.pro-pic').hide();
+// 		// $('#panel').children('.name').hide();
+// 		// $('#panel').children('.id').hide();
+// 		// $('#panel').children('.biography').hide();
+// 	// rwd mode
+// 		// if ($('.scotch-panel-canvas').hasClass('scotch-is-showing')) {
 				
-		// 		console.log("oops");
-		// 		$("#panel").velocity("transition.slideLeftOut",{duration:1000,delay:1000});
-		// 		scotchPanel.remove();
-		// 		// scotchPanel.close();
-		// }
-		// $(this).fadeOut('400', function() {
-		// 	$(".profile svg").fadeIn();
-		// });
-	// rwd mode
-	// }else{
-	var box1 = $(".profile").children('div').first();
-	$(".profile").children("div.bio").hide();
-	// $(".close").hide();
-	$(this).fadeOut('400', function() {
-		box1.removeClass('bio');
-		$(".profile svg").fadeIn('500');
-	});
-  // } rwd mode
+// 		// 		console.log("oops");
+// 		// 		$("#panel").velocity("transition.slideLeftOut",{duration:1000,delay:1000});
+// 		// 		scotchPanel.remove();
+// 		// 		// scotchPanel.close();
+// 		// }
+// 		// $(this).fadeOut('400', function() {
+// 		// 	$(".profile svg").fadeIn();
+// 		// });
+// 	// rwd mode
+// 	// }else{
+// 	var box1 = $(".profile").children('div').first();
+// 	$(".profile").children("div.bio").hide();
+// 	// $(".close").hide();
+// 	$(this).fadeOut('400', function() {
+// 		box1.removeClass('bio');
+// 		$(".profile svg").fadeIn('500');
+// 	});
+//   // } rwd mode
 
-});
+// });
 
 }// end of the responsive section 
 
