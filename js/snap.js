@@ -240,17 +240,17 @@ setInterval(function() {
 
 // let doneTheStuff3 = false;
 // let doneTheStuff4= false;
-// let doneTheStuff2 = false;
-// let doneTheStuff = false;
+let doneTheStuff2 = false;
+let doneTheStuff = false;
 $(window).resize(function(event) {
 	/* Act on the event */
 	
 	if($(window).width() >= 480){
 		
-		// if (!doneTheStuff) {
-		// 	doneTheStuff = true;
-		// 	document.location.href = document.location.href;
-		// }
+		if (!doneTheStuff) {
+			doneTheStuff = true;
+			document.location.href = document.location.href;
+		}
 		if ($('.scotch-panel-canvas').hasClass('scotch-is-showing')) {
 			// scotchPanel.close();
 		 	$(".close").hide();
@@ -290,10 +290,10 @@ $(window).resize(function(event) {
 		 	// $(".profile svg").show();
 	}else{
 			// let doneTheStuff = false;
-		// if (!doneTheStuff2) {
-		// 	doneTheStuff2 = true;
-		// 	document.location.href = document.location.href;
-		// }		
+		if (!doneTheStuff2) {
+			doneTheStuff2 = true;
+			document.location.href = document.location.href;
+		}		
 
 		//   var scotchPanel = $('#panel').scotchPanel({
 		//     containerSelector: 'body', // As a jQuery Selector .page-content
